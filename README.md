@@ -24,7 +24,7 @@ Get up and running with Juro MCP Server in under 5 minutes:
 
 ### **For Compliance Teams**
 - [Use Cases](./use-cases/README.md) - Real-world compliance scenarios
-- [Regulations Supported](./regulations/README.md) - GDPR, DORA, MiCA, and more
+- [Regulations Supported](./regulations/README.md) - GDPR, DORA, DPDP (India), MiCA, and more
 - [Business Value](./business-value/README.md) - ROI and cost savings
 
 ### **For DevOps & Platform Teams**
@@ -37,7 +37,7 @@ Get up and running with Juro MCP Server in under 5 minutes:
 - **🔍 Real-time Compliance Scanning** - Scan codebases for regulatory violations
 - **🤖 AI Tool Integration** - Connect via MCP protocol to Claude, ChatGPT, and more
 - **📊 Comprehensive Reporting** - Detailed violation reports with fix suggestions
-- **🌐 Multi-Regulation Support** - GDPR, DORA, MiCA, AI Act, HIPAA
+- **🌐 Multi-Regulation Support** - GDPR, DORA, DPDP (India), MiCA, AI Act, HIPAA
 - **⚡ High Performance** - Scan thousands of files in seconds
 - **🔒 Enterprise Security** - SOC 2 compliant, secure by design
 

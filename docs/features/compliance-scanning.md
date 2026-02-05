@@ -3,7 +3,7 @@ id: compliance-scanning
 title: Compliance Scanning
 sidebar_label: Compliance Scanning
 description: 'Comprehensive compliance scanning across multiple regulations and standards'
-keywords: [compliance scanning, regulations, GDPR, SOC2, OWASP, automated scanning]
+keywords: [compliance scanning, regulations, GDPR, DORA, DPDP India, SOC2, OWASP, automated scanning]
 ---
 
 # Compliance Scanning
@@ -12,9 +12,10 @@ Juro v2.0.0 provides comprehensive compliance scanning across multiple regulatio
 
 ## Current Implementation Status
 
-### ✅ **Fully Implemented (8 Rules)**
-- **GDPR**: 4 comprehensive rules (Personal Data Detection, Consent Management, Data Retention, Export Rights)
-- **DORA**: 4 comprehensive rules (Security Controls, Incident Response, Risk Assessment, Monitoring & Logging)
+### ✅ **Fully Implemented (36 Rules)**
+- **GDPR**: 5 rules (Article 30 – processing documentation, retention, data subject rights)
+- **DORA**: 6 rules (Resilience – logging, encryption, incident response, business continuity, third-party risk, testing)
+- **DPDP (India)**: 25 rules (Consent, notice, Data Principal rights, Data Fiduciary duties, cross-border, children's data, Aadhaar/PAN/mobile)
 
 ### 📋 **Database Ready (24 Rules)**
 - **SOC 2**: Security, availability, processing integrity, confidentiality, and privacy controls
@@ -75,6 +76,15 @@ juro scan --path ./src --rules gdpr --format json
 juro scan --path ./src --rules dora --severity-threshold HIGH
 
 # Check security controls and incident response
+```
+
+### **DPDP (India) Compliance**
+```bash
+# Scan for DPDP violations
+./juro scan ./src -r DPDP -o table
+
+# DPDP with JSON report
+./juro scan ./src -r DPDP -o json -f dpdp-report.json
 ```
 
 ### **Multi-Regulation Scanning**

@@ -3,7 +3,7 @@ id: index
 title: Welcome to Juro v2.0.0
 sidebar_label: Home
 description: 'Enterprise-grade compliance platform with AI-powered analysis, GitHub Actions integration, and VS Code extension'
-keywords: [compliance scanning, GDPR compliance, SOC 2 compliance, OWASP security, automated compliance, AI code analysis, GitHub Actions, VS Code extension, performance optimization]
+keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SOC 2 compliance, OWASP security, automated compliance, AI code analysis, GitHub Actions, VS Code extension, performance optimization]
 ---
 
 # Welcome to Juro v2.0.0
@@ -13,7 +13,7 @@ keywords: [compliance scanning, GDPR compliance, SOC 2 compliance, OWASP securit
     Enterprise-Grade Compliance Platform with AI-Powered Analysis
   </h1>
   <p className="hero-subtitle">
-    Complete compliance solution with GitHub Actions integration, VS Code extension, and performance optimization for GDPR, DORA, SOC 2, OWASP, and more.
+    Complete compliance solution with GitHub Actions integration, VS Code extension, and performance optimization for GDPR, DORA, DPDP (India), SOC 2, OWASP, and more.
   </p>
   <div className="hero-buttons">
     <a className="button button--primary button--lg" href="/docs/getting-started/installation">
@@ -60,7 +60,7 @@ keywords: [compliance scanning, GDPR compliance, SOC 2 compliance, OWASP securit
 
 ### **Comprehensive Coverage**
 - **20+ Programming Languages**: TypeScript, Python, Java, Go, Rust, and more
-- **Multiple Regulations**: GDPR, SOC 2, OWASP Top 10, ISO 27001, WCAG
+- **Multiple Regulations**: GDPR, DORA, DPDP (India), SOC 2, OWASP Top 10, ISO 27001, WCAG
 - **Real-Time Scanning**: Instant feedback as you code
 
 ## 🎯 Key Features
@@ -94,16 +94,21 @@ keywords: [compliance scanning, GDPR compliance, SOC 2 compliance, OWASP securit
 
 ## 📊 Compliance Coverage
 
-### ✅ **Fully Implemented (8 Rules)**
+### ✅ **Fully Implemented (36 Rules)**
 <div className="regulation-grid">
   <div className="regulation-card implemented">
     <h3>GDPR</h3>
-    <p>4 comprehensive rules: Personal Data Detection, Consent Management, Data Retention, Export Rights</p>
+    <p>5 rules: Article 30 – processing documentation, retention, data subject rights</p>
     <span className="status-badge implemented">✅ Implemented</span>
   </div>
   <div className="regulation-card implemented">
     <h3>DORA</h3>
-    <p>4 comprehensive rules: Security Controls, Incident Response, Risk Assessment, Monitoring & Logging</p>
+    <p>6 rules: Resilience – logging, encryption, incident response, business continuity, third-party risk, testing</p>
+    <span className="status-badge implemented">✅ Implemented</span>
+  </div>
+  <div className="regulation-card implemented">
+    <h3>DPDP (India)</h3>
+    <p>25 rules: Consent, notice, Data Principal rights, Data Fiduciary duties, cross-border, children's data, Aadhaar/PAN</p>
     <span className="status-badge implemented">✅ Implemented</span>
   </div>
 </div>

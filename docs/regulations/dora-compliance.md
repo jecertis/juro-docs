@@ -12,13 +12,15 @@ Learn how to ensure your code meets DORA (Digital Operational Resilience Act) re
 
 ## ✅ **Current Implementation Status**
 
-Juro v2.0.0 includes **4 comprehensive DORA rules** that are fully implemented and actively scanning your code:
+Juro includes **6 comprehensive DORA rules** that are fully implemented and actively scanning your code:
 
 ### **Implemented Rules**
-1. **Security Controls** - Authentication, authorization, encryption, passwords, tokens, certificates
-2. **Incident Response** - Breach detection, alert systems, response plans, escalation procedures
-3. **Risk Assessment** - Vulnerability scanning, threat modeling, security audits, risk mitigation
-4. **Monitoring & Logging** - Audit logs, security logs, access logs, monitoring systems
+1. **Logging** - Critical ICT systems must have comprehensive logging
+2. **Encryption** - Data at rest and in transit must be encrypted
+3. **Incident Response** - Procedures must be documented
+4. **Business Continuity** - Disaster recovery must be planned
+5. **Third-Party ICT Risk** - Third-party risk management must be implemented
+6. **Resilience Testing** - Digital resilience testing must be conducted regularly
 
 ### **Coverage Details**
 - **Severity Levels**: HIGH, MEDIUM

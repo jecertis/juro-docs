@@ -10,13 +10,14 @@ Learn how to ensure your code meets GDPR (General Data Protection Regulation) re
 
 ## ✅ **Current Implementation Status**
 
-Juro v2.0.0 includes **4 comprehensive GDPR rules** that are fully implemented and actively scanning your code:
+Juro includes **5 GDPR Article 30 rules** that are fully implemented and actively scanning your code:
 
 ### **Implemented Rules**
-1. **Personal Data Detection** - Identifies email, phone, SSN, credit card, bank account, passport, etc.
-2. **Consent Management** - Detects consent-related code and requirements
-3. **Data Retention** - Identifies data retention and cleanup logic
-4. **Data Export Rights** - Detects data portability and export functionality
+1. **Processing Activities** - Personal data processing activities must be logged
+2. **Controller/Processor Info** - Data controller and processor information must be documented
+3. **Processing Purposes** - Data processing purposes must be clearly defined
+4. **Retention Periods** - Data retention periods must be specified
+5. **Data Subject Rights** - Data subject rights must be documented
 
 ### **Coverage Details**
 - **Severity Levels**: HIGH, MEDIUM
