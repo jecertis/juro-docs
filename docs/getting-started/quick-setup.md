@@ -10,16 +10,24 @@ keywords: [quick setup, fast start, getting started, 5 minutes]
 
 Get Juro up and running in just 5 minutes.
 
-## 1. Install Juro
+## 1. Build Juro
+
+From the **juro** repository:
 
 ```bash
-npm install -g @juro/cli
+git clone <juro-repo-url>
+cd juro
+npm install
+npm run build
 ```
 
 ## 2. Scan Your Project
 
+From the juro repo root:
+
 ```bash
-juro scan --project ./my-project
+node packages/cli/dist/cli.js scan ./my-project
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o table
 ```
 
 ## 3. View Results

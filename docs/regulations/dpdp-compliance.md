@@ -28,7 +28,7 @@ Juro includes **25 comprehensive DPDP rules** that are fully implemented and act
 - **Severity Levels**: CRITICAL, HIGH, MEDIUM
 - **File Types**: TypeScript, JavaScript, TSX, JSX, Python, Java, JSON, YAML, HTML, MD
 - **Pattern Types**: Variable detection (Indian identifiers), control checks (rights/consent/security), regex (purpose, retention, transfer)
-- **CLI**: `./juro scan ./src -r DPDP`
+- **CLI**: `node packages/cli/dist/cli.js scan ./src -r DPDP` (from juro repo root)
 
 ## Key DPDP Requirements
 
@@ -126,19 +126,44 @@ const user = { aadhaar: 'xxxx-xxxx-1234', pan: 'ABCDE1234F' };
 
 ### **CLI**
 ```bash
-# DPDP-only scan
-./juro scan ./src -r DPDP -o table
+# DPDP-only scan (from juro repo root)
+node packages/cli/dist/cli.js scan ./src -r DPDP -o table
 
 # DPDP + save report
-./juro scan ./src -r DPDP -o json -f dpdp-report.json
+node packages/cli/dist/cli.js scan ./src -r DPDP -o json -f dpdp-report.json
+
+# Scan a live website
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o table
+
+# HTML report for verification (open in browser)
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f report.html --open
 
 # Filter by severity
-./juro scan ./src -r DPDP --severity HIGH,CRITICAL
+node packages/cli/dist/cli.js scan ./src -r DPDP --severity HIGH,CRITICAL
+```
+
+### **LLM-assisted options (DPDP)**
+
+Optional verification and false-positive reduction (require **Ollama** with **mistral-regtech**):
+
+| Option | Purpose |
+|--------|--------|
+| `--verify` | Run verification layer: classify findings as CONFIRMED_FAIL or INCONCLUSIVE (LLM never gives PASS). |
+| `--verify-max <n>` | Max findings to send to the LLM (default 30). |
+| `--llm-filter-fp` | Remove likely false positives from the report. |
+| `--dpdp-assist` | When scanning a URL, suggest privacy/terms links to fetch and re-scan. |
+
+```bash
+# Verify up to 10 findings
+node packages/cli/dist/cli.js scan ./examples -r DPDP --verify --verify-max 10 -o table
+
+# URL scan with HTML report and verification
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP --verify --verify-max 10 -o html -f report.html --open
 ```
 
 ### **Rule Summary**
 - **36 total rules** in Juro (5 GDPR, 6 DORA, 25 DPDP)
-- List all: `./juro rules`
+- List all: `node packages/cli/dist/cli.js rules`
 - DPDP rules use IDs such as `DPDP-CONSENT-001`, `DPDP-RIGHTS-001`, `DPDP-SENSITIVE-001`, etc.
 
 ## Compliance Checklist

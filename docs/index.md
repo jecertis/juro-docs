@@ -166,17 +166,18 @@ keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SO
 
 ### 1. Install Juro
 ```bash
-npm install -g @juro/cli
+cd juro && npm install && npm run build
 ```
 
 ### 2. Scan Your Project
 ```bash
-juro scan --project ./my-project
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o table
 ```
 
-### 3. Get AI Insights
+### 3. Optional: DPDP verification
 ```bash
-juro ask "Check my code for GDPR compliance issues"
+# With Ollama + mistral-regtech: verify findings or filter false positives
+node packages/cli/dist/cli.js scan ./my-project -r DPDP --verify --verify-max 10 -o html -f report.html --open
 ```
 
 ### 4. VS Code Extension

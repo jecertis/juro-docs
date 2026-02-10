@@ -63,34 +63,31 @@ Juro v2.0.0 provides comprehensive compliance scanning across multiple regulatio
 
 ### **GDPR Compliance Scanning**
 ```bash
-# Scan for GDPR violations
-juro scan --path ./src --rules gdpr --format json
-
-# Real-time VS Code scanning
-# Violations appear instantly as you type
+# Scan for GDPR violations (from juro repo root)
+node packages/cli/dist/cli.js scan ./src -r GDPR -o json -f report.json
 ```
 
 ### **DORA Financial Compliance**
 ```bash
 # Scan for DORA compliance
-juro scan --path ./src --rules dora --severity-threshold HIGH
-
-# Check security controls and incident response
+node packages/cli/dist/cli.js scan ./src -r DORA --severity HIGH,CRITICAL
 ```
 
 ### **DPDP (India) Compliance**
 ```bash
 # Scan for DPDP violations
-./juro scan ./src -r DPDP -o table
+node packages/cli/dist/cli.js scan ./src -r DPDP -o table
 
 # DPDP with JSON report
-./juro scan ./src -r DPDP -o json -f dpdp-report.json
+node packages/cli/dist/cli.js scan ./src -r DPDP -o json -f dpdp-report.json
+
+# Scan a website and open HTML report
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f report.html --open
 ```
 
 ### **Multi-Regulation Scanning**
 ```bash
-# Scan for multiple regulations
-juro scan --path ./src --rules gdpr,dora,soc2 --format sarif
+node packages/cli/dist/cli.js scan ./src -r DPDP,GDPR,DORA -o table
 ```
 
 ## Integration Options

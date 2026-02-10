@@ -10,9 +10,9 @@ Learn how to perform basic compliance scanning with Juro. This tutorial covers t
 
 ## Prerequisites
 
-- Juro CLI installed (`npm install -g @juro/cli`)
-- API key configured (`juro config set api-key YOUR_API_KEY`)
-- A project to scan
+- Juro built from source (from **juro** repo: `npm run build`)
+- Run from repo root: `node packages/cli/dist/cli.js` (or `juro` on PATH)
+- A project or URL to scan
 
 ## Quick Start
 
@@ -21,43 +21,65 @@ Learn how to perform basic compliance scanning with Juro. This tutorial covers t
 The simplest way to scan your project:
 
 ```bash
-juro scan --path ./my-project
+# Default: scan ./examples
+node packages/cli/dist/cli.js scan
+
+# Scan a directory
+node packages/cli/dist/cli.js scan ./my-project
 ```
 
 This will:
 - Scan all files in the specified directory
-- Use default compliance rules (GDPR, SOC2, OWASP)
-- Display results in the terminal
+- Use default regulations
+- Display results in the terminal (table)
 - Show a summary of violations found
 
-### 2. Specify Compliance Rules
+### 2. Specify Regulations
 
-Scan for specific compliance standards:
+Scan for specific regulations with `-r`:
 
 ```bash
-# Scan for GDPR compliance only
-juro scan --path ./my-project --rules gdpr
+# DPDP only
+node packages/cli/dist/cli.js scan ./my-project -r DPDP
 
-# Scan for multiple standards
-juro scan --path ./my-project --rules gdpr,soc2,owasp
-
-# Scan for all available rules
-juro scan --path ./my-project --rules all
+# Multiple regulations (comma-separated)
+node packages/cli/dist/cli.js scan ./my-project -r DPDP,GDPR,DORA
 ```
 
 ### 3. Choose Output Format
 
-Select the format that works best for your workflow:
+Use `-o` for format and `-f` for output file:
 
 ```bash
-# JSON output (for programmatic processing)
-juro scan --path ./my-project --format json
+# Table (default)
+node packages/cli/dist/cli.js scan ./my-project -o table
 
-# SARIF output (for security tools integration)
-juro scan --path ./my-project --format sarif
+# JSON (save to file)
+node packages/cli/dist/cli.js scan ./my-project -o json -f report.json
 
-# Plain text output (for human reading)
-juro scan --path ./my-project --format text
+# HTML report (open in browser)
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o html -f report.html --open
+```
+
+### 4. Scan a Live Website
+
+Fetch a URL and scan the downloaded content:
+
+```bash
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o table
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f report.html --open
+```
+
+### 5. DPDP with LLM Verification (Optional)
+
+With Ollama and **mistral-regtech** running, you can verify findings or filter false positives:
+
+```bash
+# Verify findings (CONFIRMED_FAIL / INCONCLUSIVE)
+node packages/cli/dist/cli.js scan ./my-project -r DPDP --verify --verify-max 10 -o table
+
+# Reduce false positives
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP --llm-filter-fp -o html -f report.html
 ```
 
 ## Understanding Scan Results
@@ -65,9 +87,9 @@ juro scan --path ./my-project --format text
 ### Sample Output
 
 ```bash
-$ juro scan --path ./my-project --rules gdpr
+$ node packages/cli/dist/cli.js scan ./my-project -r DPDP
 
-🔍 Scanning /Users/john/my-project for GDPR compliance...
+🔍 Scanning /Users/john/my-project...
 
 📊 Scan Results:
   Total files scanned: 45
@@ -111,56 +133,38 @@ $ juro scan --path ./my-project --rules gdpr
 
 ### 1. Exclude Files and Directories
 
-Skip files or directories you don't want to scan:
+Skip files or directories with `--exclude`:
 
 ```bash
-# Exclude specific directories
-juro scan --path ./my-project --exclude "node_modules,dist,coverage"
-
-# Exclude specific file patterns
-juro scan --path ./my-project --exclude "*.test.js,*.spec.js"
-
-# Use .gitignore patterns
-juro scan --path ./my-project --use-gitignore
+node packages/cli/dist/cli.js scan ./my-project --exclude "node_modules,dist,coverage"
 ```
 
-### 2. Scan Specific Files
+### 2. Include Only Certain Patterns
 
-Scan only specific files instead of entire directories:
+Use `--include` to limit what is scanned:
 
 ```bash
-# Scan specific files
-juro scan --files "src/auth.js,src/user.js,src/payment.js"
-
-# Scan files matching a pattern
-juro scan --files "src/**/*.js" --rules gdpr
+node packages/cli/dist/cli.js scan ./my-project --include "src/**/*.js" -r DPDP
 ```
 
 ### 3. Save Results to File
 
-Save scan results for later analysis:
+Use `-o` and `-f` to save output:
 
 ```bash
-# Save JSON results
-juro scan --path ./my-project --format json --output results.json
+# JSON
+node packages/cli/dist/cli.js scan ./my-project -o json -f results.json
 
-# Save SARIF results
-juro scan --path ./my-project --format sarif --output results.sarif
-
-# Save text results
-juro scan --path ./my-project --format text --output results.txt
+# HTML report
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o html -f report.html --open
 ```
 
-### 4. Verbose Output
+### 4. Minimum Severity
 
-Get detailed information about the scanning process:
+Filter by severity with `--severity`:
 
 ```bash
-# Enable verbose output
-juro scan --path ./my-project --verbose
-
-# Enable debug output
-juro scan --path ./my-project --debug
+node packages/cli/dist/cli.js scan ./my-project -r DPDP --severity HIGH,CRITICAL
 ```
 
 ## Common Use Cases
@@ -170,86 +174,34 @@ juro scan --path ./my-project --debug
 Scan your code before committing changes:
 
 ```bash
-# Scan staged files
-juro scan --files $(git diff --cached --name-only) --rules gdpr
-
-# Scan modified files
-juro scan --files $(git diff --name-only) --rules gdpr
+# Scan a directory (e.g. staged or modified)
+node packages/cli/dist/cli.js scan ./src -r DPDP -o table
 ```
 
 ### 2. CI/CD Integration
 
-Integrate scanning into your continuous integration:
+Run from the juro repo or with the CLI on PATH:
 
 ```bash
-# Scan and fail on critical violations
-juro scan --path ./src --rules gdpr,soc2,owasp --fail-on-critical
-
-# Scan and fail on any violations
-juro scan --path ./src --rules gdpr,soc2,owasp --fail-on-violations
+node packages/cli/dist/cli.js scan ./src -r DPDP,GDPR,DORA -o json -f compliance-results.json
 ```
 
 ### 3. Regular Compliance Audits
 
-Perform regular compliance audits:
+Save reports by date:
 
 ```bash
-# Full compliance audit
-juro scan --path ./my-project --rules all --format json --output audit-$(date +%Y%m%d).json
-
-# Generate compliance report
-juro scan --path ./my-project --rules gdpr,soc2,owasp --format sarif --output compliance-report.sarif
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o json -f audit-$(date +%Y%m%d).json
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f report.html
 ```
 
-## Configuration Files
+## List Rules
 
-### 1. Project Configuration
-
-Create a `juro.config.js` file in your project root:
-
-```javascript
-module.exports = {
-  rules: {
-    gdpr: {
-      enabled: true,
-      severity: 'high'
-    },
-    soc2: {
-      enabled: true,
-      severity: 'high'
-    },
-    owasp: {
-      enabled: true,
-      severity: 'critical'
-    }
-  },
-  exclude: [
-    'node_modules/**',
-    'dist/**',
-    'coverage/**',
-    '*.test.js',
-    '*.spec.js'
-  ],
-  output: {
-    format: 'json',
-    file: 'compliance-results.json'
-  }
-};
-```
-
-### 2. Global Configuration
-
-Set global defaults in your user configuration:
+Inspect available regulations and rules:
 
 ```bash
-# Set default rules
-juro config set default-rules "gdpr,soc2,owasp"
-
-# Set default output format
-juro config set default-format "json"
-
-# Set default severity threshold
-juro config set severity-threshold "medium"
+node packages/cli/dist/cli.js rules
+node packages/cli/dist/cli.js rules -r DPDP
 ```
 
 ## Troubleshooting
@@ -273,17 +225,7 @@ juro config set severity-threshold "medium"
 
 ### Debug Mode
 
-Enable debug mode to see detailed information:
-
-```bash
-juro scan --path ./my-project --debug
-```
-
-This will show:
-- Files being scanned
-- Rules being applied
-- Processing steps
-- Performance metrics
+Run from the juro repo and check the scan output; use `--keep-temp` when scanning a URL to keep downloaded files for inspection.
 
 ## Best Practices
 
@@ -292,48 +234,34 @@ Begin with basic scans and gradually add complexity:
 
 ```bash
 # Start with basic scan
-juro scan --path ./my-project
+node packages/cli/dist/cli.js scan ./my-project
 
-# Add specific rules
-juro scan --path ./my-project --rules gdpr
+# Add regulations
+node packages/cli/dist/cli.js scan ./my-project -r DPDP
 
-# Add output formatting
-juro scan --path ./my-project --rules gdpr --format json --output results.json
+# Add output file
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o json -f results.json
 ```
 
-### 2. **Use Configuration Files**
-Create project-specific configuration files for consistency:
-
-```bash
-# Create configuration file
-juro config init
-
-# Use project configuration
-juro scan --path ./my-project --config juro.config.js
-```
-
-### 3. **Integrate with Your Workflow**
+### 2. **Integrate with Your Workflow**
 Make scanning part of your development process:
 
 ```bash
-# Add to package.json scripts
+# Add to package.json scripts (run from juro repo or with juro on PATH)
 {
   "scripts": {
-    "compliance": "juro scan --path ./src --rules gdpr,soc2,owasp",
-    "compliance:json": "juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json"
+    "compliance": "node packages/cli/dist/cli.js scan ./src -r DPDP,GDPR,DORA",
+    "compliance:json": "node packages/cli/dist/cli.js scan ./src -r DPDP -o json -f compliance-results.json"
   }
 }
 ```
 
-### 4. **Regular Monitoring**
+### 3. **Regular Monitoring**
 Set up regular compliance monitoring:
 
 ```bash
-# Daily compliance check
-juro scan --path ./my-project --rules gdpr,soc2,owasp --format json --output daily-compliance-$(date +%Y%m%d).json
-
-# Weekly full audit
-juro scan --path ./my-project --rules all --format sarif --output weekly-audit-$(date +%Y%m%d).sarif
+node packages/cli/dist/cli.js scan ./my-project -r DPDP -o json -f daily-$(date +%Y%m%d).json
+node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f report.html
 ```
 
 ## Next Steps
@@ -355,4 +283,4 @@ If you need assistance:
 
 ---
 
-*Ready to start scanning? [Install Juro CLI](https://juro.dev/docs/getting-started/installation) and try your first scan!*
+*Ready to start scanning? See [First Scan](/docs/getting-started/first-scan) and [CLI Tools](/docs/integrations/cli-tools) for the full CLI reference.*
