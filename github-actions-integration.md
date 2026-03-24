@@ -351,7 +351,7 @@ Enable debug logging to troubleshoot issues:
 For issues and questions:
 
 1. Check the [troubleshooting guide](#troubleshooting)
-2. Review the [GitHub Issues](https://github.com/juro-compliant/juro.mcp.server/issues)
+2. Review the [GitHub Issues](https://github.com/juro-compliant/juro-mcp-server/issues)
 3. Contact support at [support@jurocompliant.com](mailto:support@jurocompliant.com)
 
 ## Examples

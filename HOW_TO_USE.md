@@ -17,8 +17,8 @@ This guide provides step-by-step instructions for setting up and using the Juro 
 ### 1. Install the Server
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/juro.mcp.server.git
-cd juro.mcp.server
+git clone https://github.com/your-org/juro-mcp-server.git
+cd juro-mcp-server
 
 # Install dependencies
 npm install
@@ -252,8 +252,8 @@ export LOG_LEVEL=debug  # Options: error, warn, info, debug
 2. Go to Settings → AI Models
 3. Add a new MCP server:
    - **Name**: Juro Compliance
-   - **Command**: `node /path/to/juro.mcp.server/dist/index.js`
-   - **Working Directory**: `/path/to/juro.mcp.server`
+   - **Command**: `node /path/to/juro-mcp-server/dist/index.js`
+   - **Working Directory**: `/path/to/juro-mcp-server`
 
 #### Usage in Claude
 ```
@@ -270,8 +270,8 @@ export LOG_LEVEL=debug  # Options: error, warn, info, debug
   "mcp.servers": {
     "juro-compliance": {
       "command": "node",
-      "args": ["/path/to/juro.mcp.server/dist/index.js"],
-      "cwd": "/path/to/juro.mcp.server"
+      "args": ["/path/to/juro-mcp-server/dist/index.js"],
+      "cwd": "/path/to/juro-mcp-server"
     }
   }
 }
@@ -327,7 +327,7 @@ class JuroMCPClient:
         })
 
 # Usage
-client = JuroMCPClient("/path/to/juro.mcp.server/dist/index.js")
+client = JuroMCPClient("/path/to/juro-mcp-server/dist/index.js")
 client.start_server()
 result = client.scan_directory("./src", ["GDPR", "DORA"])
 print(result)
@@ -496,9 +496,9 @@ tail -f logs/server.log
 ## Getting Help
 
 ### Resources
-- **GitHub Issues**: [Report bugs and request features](https://github.com/your-org/juro.mcp.server/issues)
-- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/your-org/juro.mcp.server/discussions)
-- **Project Wiki**: [Detailed documentation](https://github.com/your-org/juro.mcp.server/wiki)
+- **GitHub Issues**: [Report bugs and request features](https://github.com/your-org/juro-mcp-server/issues)
+- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/your-org/juro-mcp-server/discussions)
+- **Project Wiki**: [Detailed documentation](https://github.com/your-org/juro-mcp-server/wiki)
 - **API Specification**: [JURO_MCP_SERVER_API_SPECIFICATION.md](../JURO_MCP_SERVER_API_SPECIFICATION.md)
 
 ### Support Channels

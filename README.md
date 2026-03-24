@@ -2,6 +2,10 @@
 
 > **Professional Compliance Scanning via Model Context Protocol**
 
+Naming standard (repos/domains) source of truth: `/Users/arshdeep/git/juro-platform/contracts/nomenclature.md`.
+
+Functionality contribution guide: `HOW_TO_CONTRIBUTE_FUNCTIONALITIES.md`.
+
 Welcome to the official documentation for Juro MCP Server - the enterprise-grade compliance scanning solution that integrates seamlessly with AI tools and development workflows.
 
 ## 🚀 Quick Start

@@ -100,7 +100,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/juro/juro.mcp.server',
+            href: 'https://github.com/juro/juro-mcp-server',
             label: 'GitHub',
             position: 'right',
           },
@@ -165,7 +165,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/juro/juro.mcp.server',
+                href: 'https://github.com/juro/juro-mcp-server',
               },
               {
                 label: 'Discord',
@@ -213,7 +213,7 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-          '⭐️ If you like Juro, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/juro/juro.mcp.server">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/juro_dev">Twitter</a>!',
+          '⭐️ If you like Juro, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/juro/juro-mcp-server">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/juro_dev">Twitter</a>!',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,

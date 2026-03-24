@@ -168,7 +168,7 @@ export default function BlogPage() {
                 <Link to="/docs/support/community" className="button button--primary">
                   Join Community
                 </Link>
-                <Link to="https://github.com/juro/juro.mcp.server" className="button button--secondary">
+                <Link to="https://github.com/juro/juro-mcp-server" className="button button--secondary">
                   GitHub
                 </Link>
               </div>

@@ -155,7 +155,7 @@ Ready to transform your compliance workflow? Get started with Juro today:
 ## Stay Updated
 
 - Follow us on [Twitter](https://twitter.com/juro_dev)
-- Star us on [GitHub](https://github.com/juro/juro.mcp.server)
+- Star us on [GitHub](https://github.com/juro/juro-mcp-server)
 - Join our [Discord community](https://discord.gg/juro)
 
 ---

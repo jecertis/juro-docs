@@ -225,7 +225,7 @@ Address violations as they appear:
 
 ### **Support**
 - [FAQ](/docs/support/faq) - Frequently asked questions
-- [GitHub Issues](https://github.com/juro/juro.mcp.server/issues) - Report bugs and request features
+- [GitHub Issues](https://github.com/juro/juro-mcp-server/issues) - Report bugs and request features
 - [Discord Community](https://discord.gg/juro) - Get help from the community
 
 ---

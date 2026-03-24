@@ -374,8 +374,8 @@ juro scan --dry-run
 - **[Integration Guides](integrations/)** - Detailed integration instructions
 - **[Examples](examples/)** - Practical examples and tutorials
 - **[FAQ](faq.md)** - Frequently asked questions
-- **[Community](https://github.com/yourusername/juro.mcp.server/discussions)** - Community discussions
+- **[Community](https://github.com/yourusername/juro-mcp-server/discussions)** - Community discussions
 
 ---
 
-**Need help?** Check out our [FAQ](faq.md) or join our [community discussions](https://github.com/yourusername/juro.mcp.server/discussions)!
+**Need help?** Check out our [FAQ](faq.md) or join our [community discussions](https://github.com/yourusername/juro-mcp-server/discussions)!
