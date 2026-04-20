@@ -28,36 +28,3 @@ If your proposed change conflicts with any of these, STOP and ask the user befor
 
 If you are not sure whether your proposed change aligns with the vision or axioms, STOP and ask the user. Do not guess and do not proceed. The strategic layer is not optional context — it is the definition of the product.
 <!-- /juro:agent-preamble:v1 -->
-
-# AGENTS
-
-## Purpose
-
-Defines agent responsibilities for the `juro-docs` repository.
-
-## Scope
-
-- Documentation IA and content
-- Integration guides and examples
-- Consistency with live platform topology
-
-## Agent Rules
-
-- Follow platform abstraction: `/Users/arshdeep/git/juro-platform/contracts/how-to-contribute-functionalities.md`
-- Follow naming standard: `/Users/arshdeep/git/juro-platform/contracts/nomenclature.md`
-- Keep commands/URLs aligned with canonical repo and domain names
-- Avoid duplicating source-of-truth contracts owned by `juro-platform`
-
-## Required Checks
-
-- Links and references resolve
-- Terminology and naming are consistent
-- Docs reflect current service map
-
-## PR Acceptance Checklist
-
-- [ ] Scope is clearly documented and aligned with repository purpose.
-- [ ] Naming and domain references follow platform nomenclature rules.
-- [ ] Tests or validation evidence are included for behavior changes.
-- [ ] Required docs/contracts are updated when assumptions changed.
-- [ ] Rollback or mitigation path is stated for risky changes.
