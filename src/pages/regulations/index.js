@@ -40,61 +40,41 @@ export default function RegulationsPage() {
                 <div className="col col--6">
                   <div className="card">
                     <div className="card__header">
-                      <h3>SOC 2</h3>
-                      <span className="badge badge--success">Security</span>
+                      <h3>DORA</h3>
+                      <span className="badge badge--primary">EU</span>
                     </div>
                     <div className="card__body">
-                      <p>Service Organization Control 2 compliance for security, availability, and confidentiality.</p>
+                      <p>Digital Operational Resilience Act — ICT risk, incident response, third-party oversight for financial entities.</p>
                       <ul>
-                        <li>Access control validation</li>
-                        <li>System availability checks</li>
-                        <li>Data processing integrity</li>
-                        <li>Confidentiality safeguards</li>
+                        <li>Resilience and incident response checks</li>
+                        <li>Third-party ICT risk surfacing</li>
+                        <li>Operational continuity validation</li>
+                        <li>Logging and encryption controls</li>
                       </ul>
-                      <Link to="/docs/regulations/soc2-compliance" className="button button--primary">
+                      <Link to="/docs/regulations/dora-compliance" className="button button--primary">
                         Learn More
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="row margin-top--md">
                 <div className="col col--6">
                   <div className="card">
                     <div className="card__header">
-                      <h3>OWASP Top 10</h3>
-                      <span className="badge badge--warning">Security</span>
+                      <h3>DPDP (India)</h3>
+                      <span className="badge badge--warning">India</span>
                     </div>
                     <div className="card__body">
-                      <p>Web Application Security Project's top 10 security risks and vulnerabilities.</p>
+                      <p>Digital Personal Data Protection Act — consent, notice, Data Principal rights, Data Fiduciary duties.</p>
                       <ul>
-                        <li>Injection attack prevention</li>
-                        <li>Broken authentication checks</li>
-                        <li>Sensitive data exposure</li>
-                        <li>Security misconfiguration</li>
+                        <li>Consent and notice patterns</li>
+                        <li>Data Principal rights (access, correction, erasure)</li>
+                        <li>Cross-border transfer checks</li>
+                        <li>Children's data handling</li>
                       </ul>
-                      <Link to="/docs/regulations/owasp-security" className="button button--primary">
-                        Learn More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col col--6">
-                  <div className="card">
-                    <div className="card__header">
-                      <h3>ISO 27001</h3>
-                      <span className="badge badge--info">Information Security</span>
-                    </div>
-                    <div className="card__body">
-                      <p>Information Security Management System standards and best practices.</p>
-                      <ul>
-                        <li>Risk assessment validation</li>
-                        <li>Security policy compliance</li>
-                        <li>Incident management checks</li>
-                        <li>Continuous improvement</li>
-                      </ul>
-                      <Link to="/docs/regulations/iso27001" className="button button--primary">
+                      <Link to="/docs/regulations/dpdp-compliance" className="button button--primary">
                         Learn More
                       </Link>
                     </div>

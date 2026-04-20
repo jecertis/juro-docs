@@ -2,18 +2,18 @@
 id: index
 title: Welcome to Juro v2.0.0
 sidebar_label: Home
-description: 'Enterprise-grade compliance platform with AI-powered analysis, GitHub Actions integration, and VS Code extension'
-keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SOC 2 compliance, OWASP security, automated compliance, AI code analysis, GitHub Actions, VS Code extension, performance optimization]
+description: 'Non-custodial compliance scanning for GDPR, DORA, and DPDP (India). CLI, GitHub Actions, MCP, and VS Code.'
+keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, non-custodial, GitHub Actions, VS Code extension, MCP, AI agents]
 ---
 
 # Welcome to Juro v2.0.0
 
 <div className="hero-banner">
   <h1 className="hero-title">
-    Enterprise-Grade Compliance Platform with AI-Powered Analysis
+    Compliance you can prove.
   </h1>
   <p className="hero-subtitle">
-    Complete compliance solution with GitHub Actions integration, VS Code extension, and performance optimization for GDPR, DORA, DPDP (India), SOC 2, OWASP, and more.
+    Non-custodial compliance scanning for GDPR, DORA, and DPDP (India). CLI, GitHub Actions, VS Code, and an MCP server for AI agents.
   </p>
   <div className="hero-buttons">
     <a className="button button--primary button--lg" href="/docs/getting-started/installation">
@@ -38,7 +38,7 @@ keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SO
   </div>
   <div className="version-card">
     <h3>✅ Performance Optimization</h3>
-    <p>Enterprise-grade caching, parallel processing, and memory management for large codebases.</p>
+    <p>Intelligent caching, parallel processing, and memory management for large codebases.</p>
   </div>
   <div className="version-card">
     <h3>✅ Enhanced MCP Tools</h3>
@@ -53,14 +53,14 @@ keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SO
 - **Smart Defaults**: Works out of the box with sensible defaults
 - **One-Click Integration**: Set up compliance scanning in minutes, not hours
 
-### **AI-Powered Analysis**
-- **Natural Language Queries**: Ask questions about your code in plain English
-- **Intelligent Suggestions**: Get actionable recommendations for compliance improvements
-- **Learning System**: Adapts to your codebase and learns from your feedback
+### **Agent-Native**
+- **MCP Protocol Integration**: Claude, Cursor, and Copilot can invoke Juro tools directly
+- **CLI-First**: Every capability ships to the OSS CLI before the hosted surface
+- **Deterministic Findings**: Same target + same rules → same output, every run
 
-### **Comprehensive Coverage**
+### **Coverage**
 - **20+ Programming Languages**: TypeScript, Python, Java, Go, Rust, and more
-- **Multiple Regulations**: GDPR, DORA, DPDP (India), SOC 2, OWASP Top 10, ISO 27001, WCAG
+- **Regulations**: GDPR, DORA, DPDP (India)
 - **Real-Time Scanning**: Instant feedback as you code
 
 ## 🎯 Key Features
@@ -110,30 +110,6 @@ keywords: [compliance scanning, GDPR compliance, DORA compliance, DPDP India, SO
     <h3>DPDP (India)</h3>
     <p>25 rules: Consent, notice, Data Principal rights, Data Fiduciary duties, cross-border, children's data, Aadhaar/PAN</p>
     <span className="status-badge implemented">✅ Implemented</span>
-  </div>
-</div>
-
-### 📋 **Database Ready (24 Rules)**
-<div className="regulation-grid">
-  <div className="regulation-card ready">
-    <h3>SOC 2</h3>
-    <p>Security, availability, processing integrity, confidentiality, and privacy controls</p>
-    <span className="status-badge ready">📋 Database Ready</span>
-  </div>
-  <div className="regulation-card ready">
-    <h3>ISO 27001</h3>
-    <p>Information Security Management System standards and best practices</p>
-    <span className="status-badge ready">📋 Database Ready</span>
-  </div>
-  <div className="regulation-card ready">
-    <h3>OWASP Top 10</h3>
-    <p>Web Application Security Project's top 10 security risks and vulnerabilities</p>
-    <span className="status-badge ready">📋 Database Ready</span>
-  </div>
-  <div className="regulation-card ready">
-    <h3>WCAG</h3>
-    <p>Web Content Accessibility Guidelines for inclusive web applications</p>
-    <span className="status-badge ready">📋 Database Ready</span>
   </div>
 </div>
 

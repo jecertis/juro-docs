@@ -249,7 +249,6 @@ const deployToProduction = (code) => {
 - [DORA Official Text](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554)
 - [EBA DORA Guidelines](https://www.eba.europa.eu/regulation-and-policy/operational-resilience)
 - [Juro DORA Scanner](/docs/features/compliance-scanning)
-- [Financial Sector Compliance](/docs/regulations/soc2-compliance)
 
 ---
 

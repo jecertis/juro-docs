@@ -178,13 +178,10 @@ Claude: "Here are the key DORA compliance rules you should implement..."
 
 ## 🔧 Advanced Configuration
 
-### **Custom Regulations**
-You can request scanning for specific regulations:
-- **GDPR** - General Data Protection Regulation
-- **DORA** - Digital Operational Resilience Act
-- **MiCA** - Markets in Crypto-Assets
-- **AI Act** - Artificial Intelligence Act
-- **HIPAA** - Health Insurance Portability and Accountability Act
+### **Supported Regulations**
+- **GDPR** - General Data Protection Regulation (EU)
+- **DORA** - Digital Operational Resilience Act (EU)
+- **DPDP** - Digital Personal Data Protection Act (India)
 
 ### **Severity Levels**
 - **Critical** - Immediate action required

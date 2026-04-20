@@ -6,7 +6,7 @@ sidebar_label: MCP Tools
 
 # MCP Tools
 
-Learn how to use Juro's Model Context Protocol (MCP) tools for AI-powered compliance analysis and GitHub Actions integration.
+Learn how to use Juro's Model Context Protocol (MCP) tools for compliance scanning and GitHub Actions integration from AI agents.
 
 ## Overview
 

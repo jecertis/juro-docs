@@ -51,8 +51,6 @@ const sidebars = {
         'regulations/gdpr-compliance',
         'regulations/dora-compliance',
         'regulations/dpdp-compliance',
-        'regulations/soc2-compliance',
-        'regulations/owasp-security',
       ],
     },
           {

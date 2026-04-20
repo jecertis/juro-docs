@@ -2,13 +2,13 @@
 id: performance-optimization
 title: Performance Optimization
 sidebar_label: Performance Optimization
-description: 'Enterprise-grade performance optimization with intelligent caching, parallel processing, and memory management'
-keywords: [performance optimization, caching, parallel processing, memory management, enterprise-grade, benchmarks]
+description: 'Performance optimization with intelligent caching, parallel processing, and memory management'
+keywords: [performance optimization, caching, parallel processing, memory management, benchmarks]
 ---
 
 # Performance Optimization
 
-Juro v2.0.0 includes enterprise-grade performance optimization designed to handle large codebases efficiently with intelligent caching, parallel processing, and advanced memory management.
+Juro v2.0.0 includes performance optimization designed to handle large codebases efficiently with intelligent caching, parallel processing, and memory management.
 
 ## 🚀 **Performance Features**
 
@@ -302,4 +302,4 @@ juro scan --path ./src --exclude "**/node_modules/**" --exclude "**/dist/**"
 
 ---
 
-**Ready to optimize your compliance scanning performance?** [Get started with Juro's performance features](/docs/getting-started/installation) and experience enterprise-grade scanning speed!
+**Ready to optimize your compliance scanning performance?** [Get started with Juro's performance features](/docs/getting-started/installation).

@@ -47,14 +47,11 @@
 
 ### Regulation Links
 - `/regulations/gdpr-compliance` - GDPR Compliance Guide
-- `/regulations/soc2-compliance` - SOC 2 Compliance Guide
-- `/regulations/owasp-security` - OWASP Security Guide
-- `/docs/regulations/iso27001` - ISO 27001 Guide
+- `/regulations/dora-compliance` - DORA Compliance Guide
+- `/regulations/dpdp-compliance` - DPDP (India) Compliance Guide
 
 ### Blog Posts
-- `/blog/introducing-juro` - Introduction to Juro
 - `/blog/gdpr-compliance-made-simple` - GDPR Compliance Guide
-- `/blog/ai-powered-code-analysis` - AI Code Analysis
 - `/blog/github-actions-integration` - GitHub Actions Integration Guide
 
 ## 📝 Next Steps to Fix Broken Links

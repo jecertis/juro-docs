@@ -86,15 +86,13 @@ juro scan --path ./project
 
 **Valid Rules**:
 - `gdpr` - GDPR compliance
-- `soc2` - SOC 2 compliance
-- `owasp` - OWASP security
-- `iso27001` - ISO 27001 compliance
-- `hipaa` - HIPAA compliance
+- `dora` - DORA compliance
+- `dpdp` - DPDP (India) compliance
 
 **Resolution**:
 ```bash
 # Use valid rules
-juro scan --rules gdpr,soc2,owasp
+juro scan --rules gdpr,dora,dpdp
 
 # Check available rules
 juro rules list

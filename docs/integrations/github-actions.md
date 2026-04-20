@@ -108,13 +108,9 @@ jobs:
 - `workflow_dispatch` - Manual trigger
 
 ### **Compliance Regulations**
-- **GDPR**: General Data Protection Regulation
-- **DORA**: Digital Operational Resilience Act
-- **SOC 2**: Service Organization Control 2
-- **ISO 27001**: Information Security Management
-- **OWASP Top 10**: Web Application Security
-- **WCAG**: Web Content Accessibility Guidelines
-- **CSP**: Content Security Policy
+- **GDPR**: General Data Protection Regulation (EU)
+- **DORA**: Digital Operational Resilience Act (EU)
+- **DPDP**: Digital Personal Data Protection Act (India)
 
 ### **Matrix Configuration**
 ```yaml

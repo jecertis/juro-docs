@@ -10,31 +10,12 @@ export default function BlogPage() {
           <div className="col col--8 col--offset-2">
             <h1>Juro Blog</h1>
             <p className="lead">
-              Stay updated with the latest news, features, and insights about automated 
-              compliance scanning and AI-powered code analysis.
+              Updates and insights on non-custodial compliance scanning for GDPR, DORA, and DPDP.
             </p>
-            
+
             <div className="margin-vert--lg">
               <h2>Latest Posts</h2>
               <div className="row">
-                <div className="col col--6">
-                  <article className="card">
-                    <div className="card__header">
-                      <h3>Introducing Juro Compliance Platform</h3>
-                      <small className="text--muted">December 2024</small>
-                    </div>
-                    <div className="card__body">
-                      <p>
-                        We're excited to announce the launch of Juro, a comprehensive 
-                        compliance scanning platform that brings AI-powered analysis 
-                        to your development workflow.
-                      </p>
-                      <Link to="/blog/introducing-juro" className="button button--primary">
-                        Read More
-                      </Link>
-                    </div>
-                  </article>
-                </div>
                 <div className="col col--6">
                   <article className="card">
                     <div className="card__header">
@@ -43,31 +24,11 @@ export default function BlogPage() {
                     </div>
                     <div className="card__body">
                       <p>
-                        Learn how Juro's automated GDPR compliance scanning helps 
-                        developers identify and fix privacy violations before they 
+                        Learn how Juro's automated GDPR compliance scanning helps
+                        developers identify and fix privacy violations before they
                         become problems.
                       </p>
                       <Link to="/blog/gdpr-compliance-made-simple" className="button button--primary">
-                        Read More
-                      </Link>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              
-              <div className="row margin-top--md">
-                <div className="col col--6">
-                  <article className="card">
-                    <div className="card__header">
-                      <h3>AI-Powered Code Analysis</h3>
-                      <small className="text--muted">December 2024</small>
-                    </div>
-                    <div className="card__body">
-                      <p>
-                        Discover how our natural language processing capabilities 
-                        make compliance scanning more intuitive and effective.
-                      </p>
-                      <Link to="/blog/ai-powered-code-analysis" className="button button--primary">
                         Read More
                       </Link>
                     </div>
@@ -81,7 +42,7 @@ export default function BlogPage() {
                     </div>
                     <div className="card__body">
                       <p>
-                        Set up automated compliance checks in your CI/CD pipeline 
+                        Set up automated compliance checks in your CI/CD pipeline
                         with our new GitHub Actions integration.
                       </p>
                       <Link to="/blog/github-actions-integration" className="button button--primary">

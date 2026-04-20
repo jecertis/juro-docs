@@ -84,7 +84,7 @@ console.log(result.violations);`}</code></pre>
 
             <div className="margin-vert--lg">
               <h2>AI Agent Integration</h2>
-              <p>Advanced AI-powered compliance analysis and natural language processing:</p>
+              <p>Tools for AI agents to run compliance scans and interpret results:</p>
               <ul>
                 <li><strong>Natural Language Queries</strong> - Ask questions about your code in plain English</li>
                 <li><strong>Intelligent Analysis</strong> - AI-powered code analysis and suggestions</li>

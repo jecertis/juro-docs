@@ -37,7 +37,7 @@ The Juro CLI Tool provides a command-line interface for compliance scanning with
 juro-cli init /path/to/project
 
 # With specific regulations
-juro-cli init /path/to/project --regulations GDPR,OWASP Top 10,SOC2
+juro-cli init /path/to/project --regulations GDPR,DORA,DPDP,SOC2
 
 # With custom output format
 juro-cli init /path/to/project --format html --git-hooks
@@ -81,7 +81,7 @@ juro-cli report --format markdown
     "path": "/path/to/project"
   },
   "compliance": {
-    "regulations": ["GDPR", "OWASP Top 10"],
+    "regulations": ["GDPR", "DORA"],
     "thresholds": {
       "minScore": 80,
       "failOnCritical": true,
@@ -134,7 +134,7 @@ Initialize CLI tool with smart setup and git integration.
   "params": {
     "projectPath": "/path/to/project",
     "autoDetect": true,
-    "regulations": ["GDPR", "OWASP Top 10"],
+    "regulations": ["GDPR", "DORA"],
     "outputFormat": "html",
     "gitHooks": true,
     "packageManager": "npm"
@@ -211,7 +211,7 @@ Setup git hooks for automatic compliance checking.
   "method": "cli/setup-git-hooks",
   "params": {
     "projectPath": "/path/to/project",
-    "regulations": ["GDPR", "OWASP Top 10"],
+    "regulations": ["GDPR", "DORA"],
     "hookTypes": ["pre-commit", "pre-push"]
   }
 }
@@ -243,10 +243,10 @@ Setup package manager integration with compliance scripts.
 
 | Project Type | Detection Files | Default Regulations |
 |--------------|----------------|-------------------|
-| Node.js | `package.json` | GDPR, OWASP Top 10, SOC 2 |
-| Python | `requirements.txt` | GDPR, SOC 2, ISO 27001 |
-| Java | `pom.xml` | GDPR, SOC 2, OWASP Top 10 |
-| Go | `go.mod` | GDPR, SOC 2 |
+| Node.js | `package.json` | GDPR, DORA, DPDP |
+| Python | `requirements.txt` | GDPR, DORA, DPDP |
+| Java | `pom.xml` | GDPR, DORA, DPDP |
+| Go | `go.mod` | GDPR, DORA, DPDP |
 | Rust | `Cargo.toml` | GDPR, SOC 2 |
 
 ### Package Manager Detection
@@ -269,7 +269,7 @@ Runs compliance check on staged files before commit.
 echo "🔍 Running compliance check..."
 
 # Run compliance scan on staged files
-juro-cli scan --staged --regulations GDPR,OWASP Top 10 --fail-on-critical
+juro-cli scan --staged --regulations GDPR,DORA,DPDP --fail-on-critical
 
 if [ $? -ne 0 ]; then
     echo "❌ Compliance check failed. Please fix violations before committing."
@@ -290,7 +290,7 @@ Runs full compliance check before push.
 echo "🔍 Running full compliance check before push..."
 
 # Run full compliance scan
-juro-cli scan --regulations GDPR,OWASP Top 10 --fail-on-critical --min-score 80
+juro-cli scan --regulations GDPR,DORA,DPDP --fail-on-critical --min-score 80
 
 if [ $? -ne 0 ]; then
     echo "❌ Compliance check failed. Please fix violations before pushing."
@@ -410,7 +410,7 @@ Generates a styled HTML report with:
 ### Node.js Project Setup
 ```bash
 # Initialize CLI tool
-juro-cli init ./my-node-project --regulations GDPR,OWASP Top 10 --format html
+juro-cli init ./my-node-project --regulations GDPR,DORA,DPDP --format html
 
 # Install dependencies
 npm install
@@ -439,7 +439,7 @@ juro-cli report --format markdown
 # GitHub Actions example
 - name: Run Compliance Check
   run: |
-    juro-cli scan --regulations GDPR,OWASP Top 10 --format json --fail-on-critical
+    juro-cli scan --regulations GDPR,DORA,DPDP --format json --fail-on-critical
     juro-cli report --format html --output ./compliance-reports/
 ```
 

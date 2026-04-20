@@ -2,13 +2,13 @@
 id: architecture-overview
 title: Architecture Overview
 sidebar_label: Architecture Overview
-description: 'Juro v2.0.0 enterprise-grade architecture with MCP protocol, performance optimization, and comprehensive integrations'
-keywords: [architecture, MCP protocol, enterprise-grade, performance optimization, microservices, scalability]
+description: 'Juro v2.0.0 modern architecture with MCP protocol, performance optimization, and comprehensive integrations'
+keywords: [architecture, MCP protocol, modern, performance optimization, microservices, scalability]
 ---
 
 # Architecture Overview
 
-Juro v2.0.0 is built on a modern, enterprise-grade architecture designed for scalability, performance, and comprehensive compliance scanning across multiple regulations and standards.
+Juro v2.0.0 is built on a modern, modern architecture designed for scalability, performance, and comprehensive compliance scanning across multiple regulations and standards.
 
 ## 🏗️ **System Architecture**
 

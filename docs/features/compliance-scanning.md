@@ -8,7 +8,7 @@ keywords: [compliance scanning, regulations, GDPR, DORA, DPDP India, SOC2, OWASP
 
 # Compliance Scanning
 
-Juro v2.0.0 provides comprehensive compliance scanning across multiple regulations and standards with enterprise-grade performance optimization and real-time IDE integration.
+Juro v2.0.0 provides comprehensive compliance scanning across multiple regulations and standards with high-throughput performance optimization and real-time IDE integration.
 
 ## Current Implementation Status
 
@@ -16,13 +16,6 @@ Juro v2.0.0 provides comprehensive compliance scanning across multiple regulatio
 - **GDPR**: 5 rules (Article 30 – processing documentation, retention, data subject rights)
 - **DORA**: 6 rules (Resilience – logging, encryption, incident response, business continuity, third-party risk, testing)
 - **DPDP (India)**: 25 rules (Consent, notice, Data Principal rights, Data Fiduciary duties, cross-border, children's data, Aadhaar/PAN/mobile)
-
-### 📋 **Database Ready (24 Rules)**
-- **SOC 2**: Security, availability, processing integrity, confidentiality, and privacy controls
-- **ISO 27001**: Information Security Management System standards
-- **OWASP Top 10**: Web application security risks and vulnerabilities
-- **WCAG**: Web Content Accessibility Guidelines
-- **CSP**: Content Security Policy
 
 ## Advanced Scanning Features
 
@@ -39,7 +32,7 @@ Juro v2.0.0 provides comprehensive compliance scanning across multiple regulatio
 - **Memory Management**: Efficient handling of large files with chunked processing
 - **Incremental Scanning**: Only scan changed files for faster subsequent runs
 
-### **Enterprise-Grade Features**
+### **Core Features**
 - **Auto-Detection Engine**: Automatically detects project types and relevant regulations
 - **Smart Configuration**: Auto-generates compliance configurations
 - **Context-Aware Analysis**: Advanced pattern matching for actual data vs. configuration

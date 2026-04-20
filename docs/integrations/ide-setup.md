@@ -164,13 +164,7 @@ Enable debug logging in VS Code settings:
 ### **Currently Implemented**
 - **GDPR**: 4 comprehensive rules
 - **DORA**: 4 comprehensive rules
-
-### **Database Ready**
-- **SOC 2**: Security and availability controls
-- **ISO 27001**: Information security management
-- **OWASP Top 10**: Web application security
-- **WCAG**: Web accessibility guidelines
-- **CSP**: Content security policy
+- **DPDP (India)**: 25 rules
 
 ## Best Practices
 

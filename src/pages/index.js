@@ -28,12 +28,12 @@ function HomepageHeader() {
 function HomepageFeatures() {
   const FeatureList = [
     {
-      title: '🤖 AI-Native Integration',
-      description: 'Seamlessly integrates with Claude, ChatGPT, and other MCP-compatible tools. Ask questions in plain English about your compliance status.',
+      title: '🤖 Agent-Native Integration',
+      description: 'AI agents (Claude, Cursor, Copilot) can invoke Juro tools directly via the Model Context Protocol. Compliance checks that run where the code is written.',
     },
     {
-      title: '🏢 Enterprise-Grade Compliance',
-      description: 'Multi-regulation support for GDPR, DORA, SOC 2, ISO 27001, WCAG, and OWASP Top 10. Real-time scanning across 20+ programming languages.',
+      title: '🔐 Non-Custodial by Design',
+      description: 'Supports GDPR, DORA, and DPDP (India) across 20+ programming languages. Juro never stores your scan targets — findings stay in your perimeter.',
     },
     {
       title: '⚡ Zero Configuration',

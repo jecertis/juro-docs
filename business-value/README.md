@@ -78,17 +78,16 @@ Juro MCP Server delivers measurable business value by automating compliance proc
 - **Risk Management**: Proactive identification of compliance gaps
 - **Audit Readiness**: Always prepared for regulatory examinations
 
-### **Healthcare**
-- **HIPAA Compliance**: Protect patient data privacy
-- **Security Standards**: Maintain healthcare security requirements
-- **Audit Trails**: Complete compliance documentation
-- **Risk Mitigation**: Prevent costly healthcare violations
+### **India SaaS / DPDP-facing Companies**
+- **DPDP Compliance**: Technical readiness for India's Digital Personal Data Protection Act
+- **Consent and Notice**: Engineer-legible controls for consent, notice, and data principal rights
+- **Cross-border Transfer Checks**: Surface flows that need Data Fiduciary attention
+- **Audit-Ready Evidence**: Signed, reproducible scan artifacts
 
 ### **Technology Companies**
 - **GDPR Compliance**: Protect user data and privacy
-- **AI Act Compliance**: Ensure responsible AI development
 - **Security Standards**: Maintain industry security requirements
-- **International Expansion**: Comply with global regulations
+- **International Expansion**: Align with GDPR and DORA requirements
 
 ### **Government & Public Sector**
 - **Regulatory Compliance**: Meet government security standards
@@ -129,14 +128,6 @@ Juro MCP Server delivers measurable business value by automating compliance proc
 - $150,000 annual cost savings
 - Improved developer productivity
 
-### **Case Study: Healthcare Technology Startup**
-**Challenge**: HIPAA compliance concerns slowing development
-**Solution**: Automated compliance scanning with Juro
-**Results**:
-- 100% HIPAA compliance maintained
-- 3x faster development cycles
-- Zero compliance violations in 12 months
-- Successful enterprise client acquisition
 
 ### **Case Study: Global Software Company**
 **Challenge**: Managing compliance across 50+ development teams

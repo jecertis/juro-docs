@@ -16,7 +16,7 @@ Common questions and answers about Juro Compliance Platform.
 Juro is an automated compliance scanning platform that helps developers ensure their code meets various regulations and standards.
 
 ### Which regulations are supported?
-We support GDPR, SOC 2, OWASP Top 10, ISO 27001, WCAG, and DORA.
+We support GDPR, DORA, and DPDP (India). These are the primary scope — additional regulations may appear in rule metadata but are not claimed as product coverage.
 
 ### How much does it cost?
 Juro offers both free and paid plans. Check our pricing page for details.

@@ -214,8 +214,7 @@ Generate detailed compliance reports:
 
 - **GDPR:** 4 violations
 - **DORA:** 2 violations
-- **OWASP Top 10:** 1 violations
-- **SOC 2:** 1 violations
+- **DPDP:** 2 violations
 
 ## ⚠️ Violations by Severity
 
