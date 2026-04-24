@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout juro-docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout juro-platform (for check scripts)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: jecertis/juro-platform
           path: juro-platform
