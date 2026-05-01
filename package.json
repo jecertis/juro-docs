@@ -61,7 +61,7 @@
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^8.59.0",
     "@typescript-eslint/parser": "^8.59.0",
-    "eslint": "^8.0.0",
+    "eslint": "^10.2.1",
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "jest": "^30.3.0",
