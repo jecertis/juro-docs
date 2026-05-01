@@ -4,7 +4,9 @@
 docs/api/error-codes.md:curl-auth-header
 USER_TRACKING.md:curl-auth-header
 
-# Example/test placeholder values
-**/*example*/*:generic-api-key
-**/*test*/*:generic-api-key
-**/*.example.*:generic-api-key
+# Ignore test/example files
+**/*test*/*
+**/*spec*/*
+**/*.example.*
+**/*.sample.*
+**/examples/**
