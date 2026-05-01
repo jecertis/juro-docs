@@ -141,7 +141,7 @@ setInterval(getAnalytics, 30000);
 ```bash
 # Export data for external analysis
 curl -X GET https://your-server.railway.app/api/export \
-  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Authorization: Bearer not-a-real-token-xyz789" \
   > analytics_export.json
 
 # Send to external service

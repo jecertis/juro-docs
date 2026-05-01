@@ -1,0 +1,12 @@
+# Gitleaks ignore patterns for juro-docs
+
+# Documentation examples with placeholder tokens (not real secrets)
+docs/api/error-codes.md:curl-auth-header
+USER_TRACKING.md:curl-auth-header
+
+# Ignore test/example files
+**/*test*/*
+**/*spec*/*
+**/*.example.*
+**/*.sample.*
+**/examples/**

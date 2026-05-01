@@ -43,7 +43,7 @@ Complete reference for all error codes returned by the Juro API and MCP tools.
 export JURO_API_KEY="your-api-key-here"
 
 # Or use in request header
-curl -H "Authorization: Bearer your-api-key-here" \
+curl -H "Authorization: Bearer not-a-real-token-abc123" \
      https://api.juro.dev/v1/scan
 ```
 
