@@ -1,0 +1,10 @@
+# Gitleaks ignore patterns for juro-docs
+
+# Documentation examples with placeholder tokens (not real secrets)
+docs/api/error-codes.md:curl-auth-header
+USER_TRACKING.md:curl-auth-header
+
+# Example/test placeholder values
+**/*example*/*:generic-api-key
+**/*test*/*:generic-api-key
+**/*.example.*:generic-api-key
