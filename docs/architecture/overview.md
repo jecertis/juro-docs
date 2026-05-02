@@ -2,47 +2,46 @@
 id: architecture-overview
 title: Architecture Overview
 sidebar_label: Architecture Overview
-description: 'Juro v2.0.0 modern architecture with MCP protocol, performance optimization, and comprehensive integrations'
-keywords: [architecture, MCP protocol, modern, performance optimization, microservices, scalability]
+description: 'Juro platform architecture with MCP protocol, scanning engine, and compliance pipeline'
+keywords: [architecture, MCP protocol, compliance scanning, non-custodial, signed evidence]
 ---
 
 # Architecture Overview
 
-Juro v2.0.0 is built on a modern, modern architecture designed for scalability, performance, and comprehensive compliance scanning across multiple regulations and standards.
+Juro is built on a non-custodial architecture designed for deterministic, signed, and verifiable compliance artifacts.
 
 ## 🏗️ **System Architecture**
 
 ### **High-Level Architecture**
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Juro v2.0.0 Platform                    │
+│                        Juro Platform                            │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │   VS Code   │  │  GitHub     │  │    CLI      │  │   AI    │ │
-│  │ Extension   │  │  Actions    │  │   Tools     │  │ Agents  │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │   Web UI    │  │    CLI      │  │  AI Agents  │             │
+│  │  (juro-web) │  │  (juro)     │  │   (MCP)     │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
 ├─────────────────────────────────────────────────────────────────┤
 │                    Integration Layer (MCP)                      │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │   GitHub    │  │ Compliance  │  │ Performance │  │   Auto  │ │
-│  │  Actions    │  │   Engine    │  │ Optimization│  │Detection│ │
-│  │  Service    │  │             │  │             │  │ Engine  │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │ Compliance  │  │   Rule      │  │   Lead      │             │
+│  │   Engine    │  │  Manager    │  │  Tracking   │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
 ├─────────────────────────────────────────────────────────────────┤
 │                    Core Services Layer                          │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │   MCP       │  │   Service   │  │   Cache     │  │  Rule   │ │
-│  │  Server     │  │  Container  │  │  Manager    │  │ Manager │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │   MCP       │  │   HTTP      │  │   Rule      │             │
+│  │  Server     │  │   Server    │  │  Packs      │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
 ├─────────────────────────────────────────────────────────────────┤
 │                    Data & Storage Layer                         │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │   Rule      │  │   Cache     │  │   Logs      │  │  Config │ │
-│  │   Packs     │  │  Storage    │  │  Storage    │  │ Storage │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │  SQLite     │  │  Evidence   │  │  Config     │             │
+│  │  (leads)    │  │  Artifacts  │  │  Storage    │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -51,89 +50,37 @@ Juro v2.0.0 is built on a modern, modern architecture designed for scalability, 
 ### **MCP Server**
 - **Protocol**: Model Context Protocol (MCP) implementation
 - **Ports**: HTTP API (8080), MCP TCP (3000)
-- **Features**: Tool registration, request handling, response formatting
-- **Scalability**: Horizontal scaling with load balancing
-
-### **Service Container**
-- **Dependency Injection**: IoC container for service management
-- **Service Registration**: Automatic service discovery and registration
-- **Lifecycle Management**: Service initialization, startup, and shutdown
-- **Configuration**: Centralized configuration management
+- **Features**: Tool registration (scan_directory, scan_file, list_rules, get_rule_details, validate_rule), request handling, response formatting
 
 ### **Compliance Engine**
-- **Rule Processing**: Multi-regulation rule processing
-- **Pattern Matching**: Advanced regex and context-aware matching
-- **Violation Detection**: Real-time violation identification
-- **Scoring System**: Algorithm-based compliance scoring
-
-## 🚀 **Performance Architecture**
-
-### **CacheManager**
-```typescript
-class CacheManager {
-  // Intelligent caching system
-  async cacheRulePack(regulation: string, rules: Rule[]): Promise<void>
-  async cacheScanResult(filePath: string, result: ScanResult): Promise<void>
-  async getCachedResult(filePath: string): Promise<ScanResult | null>
-  async invalidateCache(pattern: string): Promise<void>
-}
-```
-
-### **WorkerPool**
-```typescript
-class WorkerPool {
-  // Parallel processing architecture
-  async createWorkers(count: number): Promise<void>
-  async distributeTask(task: ScanTask): Promise<ScanResult>
-  async scaleWorkers(targetCount: number): Promise<void>
-  async getWorkerStats(): Promise<WorkerStats[]>
-}
-```
-
-### **MemoryManager**
-```typescript
-class MemoryManager {
-  // Advanced memory management
-  async processLargeFile(filePath: string, chunkSize: number): Promise<ScanResult>
-  async cleanupMemory(): Promise<void>
-  async monitorMemoryUsage(): Promise<MemoryStats>
-  async allocateMemory(size: number): Promise<Buffer>
-}
-```
+- **Rule Processing**: Multi-regulation rule processing (GDPR, DORA, DPDP)
+- **Pattern Matching**: Regex and context-aware matching
+- **Violation Detection**: Deterministic violation identification
+- **Evidence Signing**: Cryptographic signatures for reproducible artifacts
 
 ## 🔌 **Integration Services**
 
-### **GitHub Actions Service**
+### **Rule Packs**
 ```typescript
-class GitHubActionsService {
-  // Complete GitHub Actions integration
-  async addWorkflow(repoPath: string, config: WorkflowConfig): Promise<WorkflowResult>
-  async createPRWorkflow(repoPath: string, config: PRConfig): Promise<WorkflowResult>
-  async runPRComplianceCheck(prData: PRData): Promise<ComplianceResult>
-  async generateComplianceReport(results: ScanResult[]): Promise<Report>
-  async sendComplianceNotifications(data: ComplianceData): Promise<NotificationResult>
+// Content-addressed rule packs with regulatory citations
+interface RulePack {
+  regulation: string;       // 'gdpr' | 'dora' | 'dpdp'
+  version: string;          // semver
+  hash: string;             // content hash for determinism
+  rules: Rule[];
 }
 ```
 
-### **VS Code Extension Service**
+### **Evidence Pipeline**
 ```typescript
-class VSCodeExtensionService {
-  // Real-time IDE integration
-  async scanFile(filePath: string): Promise<ScanResult>
-  async scanWorkspace(workspacePath: string): Promise<ScanResult[]>
-  async getComplianceScore(filePath: string): Promise<ComplianceScore>
-  async getViolations(filePath: string): Promise<Violation[]>
-}
-```
-
-### **Auto-Detection Engine**
-```typescript
-class AutoDetectionEngine {
-  // Intelligent project detection
-  async detectProjectType(projectPath: string): Promise<ProjectType>
-  async mapRegulations(projectType: ProjectType): Promise<Regulation[]>
-  async generateConfiguration(projectType: ProjectType): Promise<Configuration>
-  async downloadRulePacks(regulations: Regulation[]): Promise<RulePack[]>
+// Deterministic, signed evidence artifacts
+interface EvidenceArtifact {
+  scanId: string;
+  targetHash: string;
+  findingsHash: string;
+  rulesHash: string;
+  timestamp: string;
+  signature: string;        // sigstore/OIDC signature
 }
 ```
 
@@ -143,44 +90,36 @@ class AutoDetectionEngine {
 ```
 1. Request Received (MCP/HTTP)
    ↓
-2. Service Container Resolution
+2. Rule Pack Loading (content-addressed, cached)
    ↓
-3. Auto-Detection Engine (Project Type + Regulations)
+3. File/Directory Scanning
    ↓
-4. Rule Pack Loading (Cache Check)
+4. Compliance Engine Analysis (deterministic)
    ↓
-5. Worker Pool Task Distribution
+5. Result Aggregation
    ↓
-6. Parallel File Processing
+6. Evidence Artifact Generation (signed)
    ↓
-7. Compliance Engine Analysis
-   ↓
-8. Result Aggregation
-   ↓
-9. Cache Storage
-   ↓
-10. Response Formatting
-    ↓
-11. Client Response
+7. Response to Client
 ```
 
-### **Performance Optimization Flow**
+### **Evidence Pipeline**
 ```
-1. File Change Detection
+1. Scan Target Identified
    ↓
-2. Cache Lookup
+2. Target Hash Computed (content-addressed)
    ↓
-3. Incremental Processing (if cached)
+3. Rules Hash Computed (rule pack version)
    ↓
-4. Worker Pool Distribution
+4. Deterministic Scan Execution
    ↓
-5. Chunked File Processing
+5. Findings Hash Computed
    ↓
-6. Memory Management
+6. Artifact Signed (sigstore/OIDC)
    ↓
-7. Result Caching
+7. Log Entry Published (transparency log)
    ↓
-8. Performance Metrics Collection
+8. Artifact Delivered to Customer
 ```
 
 ## 🔒 **Security Architecture**
@@ -206,8 +145,7 @@ class AutoDetectionEngine {
 - **Auto-Scaling**: Dynamic resource allocation
 
 ### **Vertical Scaling**
-- **Worker Pool Scaling**: 1-8 workers based on load
-- **Memory Optimization**: Dynamic memory allocation
+- **Memory Optimization**: Efficient memory usage for large scans
 - **CPU Optimization**: Multi-core processing
 - **I/O Optimization**: Async file operations
 
@@ -219,17 +157,15 @@ class AutoDetectionEngine {
 version: '3.8'
 services:
   juro-mcp-server:
-    image: juro/mcp-server:v2.0.0
+    image: juro/mcp-server:latest
     ports:
       - "3000:3000"
       - "8080:8080"
     environment:
       - NODE_ENV=production
-      - WORKER_COUNT=4
-      - CACHE_ENABLED=true
     volumes:
       - ./config:/app/config
-      - ./cache:/app/cache
+      - ./rules:/app/rules
 ```
 
 ### **Kubernetes Deployment**
@@ -294,20 +230,8 @@ spec:
     "host": "0.0.0.0",
     "protocol": "tcp"
   },
-  "performance": {
-    "workerPool": {
-      "minWorkers": 1,
-      "maxWorkers": 8,
-      "defaultWorkers": 4
-    },
-    "caching": {
-      "enabled": true,
-      "ttl": 3600,
-      "maxSize": "1GB"
-    }
-  },
   "compliance": {
-    "regulations": ["GDPR", "DORA"],
+    "regulations": ["gdpr", "dora", "dpdp"],
     "severityThreshold": "MEDIUM",
     "maxFileSize": "50MB"
   }
@@ -320,19 +244,17 @@ spec:
 - **Secret Management**: Secure handling of sensitive configuration
 - **Validation**: Configuration schema validation
 
-## 🚀 **Future Architecture Plans**
+## 🚀 **Roadmap**
 
-### **Phase 3: Advanced Integrations**
-- **Multi-Cloud Support**: AWS, Azure, GCP integrations
-- **Enterprise SSO**: SAML, OIDC integration
-- **Advanced Analytics**: ML-powered compliance insights
-- **Custom Rule Engine**: User-defined rule creation
+### **Tier 3 — Private Deploy Agent**
+- **In-VPC Agent**: Read-only IAM role for cloud state scanning
+- **Local Triage**: Ollama-based analysis with no external LLM calls
+- **Signed Evidence**: Deterministic, content-addressed artifacts
 
-### **Phase 4: AI Enhancement**
-- **Natural Language Processing**: Advanced AI queries
-- **Predictive Compliance**: ML-based violation prediction
-- **Automated Fixes**: AI-generated code fixes
-- **Intelligent Recommendations**: Context-aware suggestions
+### **Transparency Log**
+- **Public Append-Only Log**: `{scan_id, target_hash, findings_hash, rules_hash, timestamp, signature}`
+- **Sigstore Integration**: OIDC-based signing and verification
+- **Auditor Access**: Independent verification of compliance claims
 
 ---
 

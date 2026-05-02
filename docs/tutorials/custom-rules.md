@@ -285,7 +285,7 @@ Rules for specific file types:
 juro scan --path ./my-project --rules-file juro.rules.json
 
 # Combine with built-in rules
-juro scan --path ./my-project --rules gdpr,soc2 --rules-file juro.rules.json
+juro scan --path ./my-project --rules gdpr,dora --rules-file juro.rules.json
 
 # Apply specific rule categories
 juro scan --path ./my-project --rules-file juro.rules.json --categories security,quality

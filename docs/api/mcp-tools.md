@@ -6,40 +6,38 @@ sidebar_label: MCP Tools
 
 # MCP Tools
 
-Learn how to use Juro's Model Context Protocol (MCP) tools for compliance scanning and GitHub Actions integration from AI agents.
+Learn how to use Juro's Model Context Protocol (MCP) tools for compliance scanning.
 
 ## Overview
 
-Juro v2.0.0 provides a comprehensive set of MCP tools that allow AI assistants to interact with your codebase, perform compliance analysis, and manage GitHub Actions workflows. These tools enable natural language queries about your code's compliance status and automated CI/CD integration.
+Juro provides MCP tools that allow AI assistants to interact with codebases and perform compliance analysis for GDPR, DORA, and DPDP regulations.
 
 ## Available Tools
 
-### Compliance Scanning Tools
+### `scan_directory`
 
-### `scan_codebase`
-
-Scans your entire codebase for compliance violations.
+Scans a directory for compliance violations.
 
 ```json
 {
-  "name": "scan_codebase",
-  "description": "Scan codebase for compliance violations",
+  "name": "scan_directory",
+  "description": "Scan directory for compliance violations",
   "parameters": {
     "type": "object",
     "properties": {
       "path": {
         "type": "string",
-        "description": "Path to the codebase to scan"
+        "description": "Path to the directory to scan"
       },
-      "rules": {
+      "regulations": {
         "type": "array",
         "items": {"type": "string"},
-        "description": "Compliance rules to check (e.g., 'gdpr', 'soc2', 'owasp')"
+        "description": "Regulations to check (gdpr, dora, dpdp)"
       },
-      "format": {
+      "severityThreshold": {
         "type": "string",
-        "enum": ["json", "sarif", "text"],
-        "description": "Output format for scan results"
+        "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+        "description": "Minimum severity to report"
       }
     },
     "required": ["path"]
@@ -50,19 +48,19 @@ Scans your entire codebase for compliance violations.
 **Example Usage:**
 ```bash
 # Scan for GDPR compliance
-juro scan --path ./my-project --rules gdpr --format json
+juro scan ./my-project --regulations gdpr --format json
 
-# Scan for multiple compliance standards
-juro scan --path ./my-project --rules gdpr,soc2,owasp --format sarif
+# Scan for multiple regulations
+juro scan ./my-project --regulations gdpr,dora,dpdp --format json
 ```
 
-### `analyze_file`
+### `scan_file`
 
 Analyzes a specific file for compliance issues.
 
 ```json
 {
-  "name": "analyze_file",
+  "name": "scan_file",
   "description": "Analyze a specific file for compliance violations",
   "parameters": {
     "type": "object",
@@ -71,10 +69,10 @@ Analyzes a specific file for compliance issues.
         "type": "string",
         "description": "Path to the file to analyze"
       },
-      "rules": {
+      "regulations": {
         "type": "array",
         "items": {"type": "string"},
-        "description": "Compliance rules to check"
+        "description": "Regulations to check"
       }
     },
     "required": ["file_path"]
@@ -85,191 +83,76 @@ Analyzes a specific file for compliance issues.
 **Example Usage:**
 ```bash
 # Analyze a specific file
-juro analyze --file ./src/auth.js --rules gdpr,owasp
+juro scan src/auth.js --regulations gdpr,dora
 ```
 
-### `ask_question`
+### `list_rules`
 
-Ask natural language questions about your code's compliance.
+Lists available compliance rules.
 
 ```json
 {
-  "name": "ask_question",
-  "description": "Ask questions about code compliance in natural language",
+  "name": "list_rules",
+  "description": "List available compliance rules",
   "parameters": {
     "type": "object",
     "properties": {
-      "question": {
-        "type": "string",
-        "description": "Natural language question about compliance"
+      "regulations": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Filter by regulations"
       },
-      "context": {
+      "severity": {
         "type": "string",
-        "description": "Additional context or file paths to consider"
+        "description": "Filter by severity level"
       }
-    },
-    "required": ["question"]
+    }
   }
 }
 ```
 
-**Example Usage:**
-```bash
-# Ask about GDPR compliance
-juro ask "Does my authentication system comply with GDPR requirements?"
+### `get_rule_details`
 
-# Ask about specific code patterns
-juro ask "Are there any SQL injection vulnerabilities in my database queries?"
-```
-
-### GitHub Actions Tools (v2.0.0)
-
-### `add_github_workflow`
-
-Adds a compliance workflow to your GitHub repository.
+Gets detailed information about a specific rule.
 
 ```json
 {
-  "name": "add_github_workflow",
-  "description": "Add a compliance workflow to GitHub repository",
+  "name": "get_rule_details",
+  "description": "Get details for a specific compliance rule",
   "parameters": {
     "type": "object",
     "properties": {
-      "repo_path": {
+      "rule_id": {
         "type": "string",
-        "description": "Path to the local repository"
+        "description": "Rule identifier (e.g., gdpr/article32-001)"
+      }
+    },
+    "required": ["rule_id"]
+  }
+}
+```
+
+### `validate_rule`
+
+Validates a rule against a code snippet.
+
+```json
+{
+  "name": "validate_rule",
+  "description": "Validate a rule against code",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "rule_id": {
+        "type": "string",
+        "description": "Rule identifier"
       },
-      "workflow_config": {
-        "type": "object",
-        "properties": {
-          "name": {"type": "string"},
-          "trigger": {"type": "string", "enum": ["push", "pull_request", "schedule"]},
-          "regulations": {"type": "array", "items": {"type": "string"}},
-          "fail_on_violations": {"type": "boolean"},
-          "fail_on_critical": {"type": "boolean"},
-          "min_score": {"type": "number"}
-        }
+      "code": {
+        "type": "string",
+        "description": "Code snippet to validate against"
       }
     },
-    "required": ["repo_path", "workflow_config"]
-  }
-}
-```
-
-**Example Usage:**
-```bash
-# Add GDPR compliance workflow
-juro add-workflow --repo ./my-project --config gdpr-workflow.json
-```
-
-### `create_pr_workflow`
-
-Creates a PR-specific compliance workflow with automatic commenting.
-
-```json
-{
-  "name": "create_pr_workflow",
-  "description": "Create a PR-specific compliance workflow",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "repo_path": {"type": "string"},
-      "pr_config": {
-        "type": "object",
-        "properties": {
-          "comment_on_violations": {"type": "boolean"},
-          "fail_on_critical": {"type": "boolean"},
-          "notify_channels": {"type": "array", "items": {"type": "string"}}
-        }
-      }
-    },
-    "required": ["repo_path", "pr_config"]
-  }
-}
-```
-
-### `run_pr_compliance_check`
-
-Runs compliance check on a specific pull request.
-
-```json
-{
-  "name": "run_pr_compliance_check",
-  "description": "Run compliance check on a pull request",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "pr_data": {
-        "type": "object",
-        "properties": {
-          "number": {"type": "number"},
-          "base_branch": {"type": "string"},
-          "head_branch": {"type": "string"},
-          "changed_files": {"type": "array", "items": {"type": "string"}}
-        }
-      },
-      "options": {
-        "type": "object",
-        "properties": {
-          "regulations": {"type": "array", "items": {"type": "string"}},
-          "severity_threshold": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}
-        }
-      }
-    },
-    "required": ["pr_data"]
-  }
-}
-```
-
-### `generate_compliance_report`
-
-Generates detailed compliance reports in multiple formats.
-
-```json
-{
-  "name": "generate_compliance_report",
-  "description": "Generate compliance report from scan results",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "scan_results": {"type": "object"},
-      "report_options": {
-        "type": "object",
-        "properties": {
-          "format": {"type": "string", "enum": ["markdown", "html", "json", "sarif"]},
-          "include_details": {"type": "boolean"},
-          "include_trends": {"type": "boolean"},
-          "group_by": {"type": "array", "items": {"type": "string"}}
-        }
-      }
-    },
-    "required": ["scan_results"]
-  }
-}
-```
-
-### `send_compliance_notifications`
-
-Sends compliance notifications to team channels.
-
-```json
-{
-  "name": "send_compliance_notifications",
-  "description": "Send compliance notifications to team channels",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "compliance_data": {"type": "object"},
-      "notification_config": {
-        "type": "object",
-        "properties": {
-          "slack": {"type": "object", "properties": {"webhook": {"type": "string"}}},
-          "email": {"type": "object", "properties": {"recipients": {"type": "array", "items": {"type": "string"}}}},
-          "teams": {"type": "object", "properties": {"webhook": {"type": "string"}}}
-        }
-      }
-    },
-    "required": ["compliance_data", "notification_config"]
+    "required": ["rule_id", "code"]
   }
 }
 ```
@@ -285,10 +168,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "juro": {
       "command": "npx",
-      "args": ["@juro/mcp-server"],
-      "env": {
-        "JURO_API_KEY": "your-api-key-here"
-      }
+      "args": ["@juro/mcp-server"]
     }
   }
 }
@@ -304,10 +184,7 @@ Add to your Cursor settings:
     "servers": {
       "juro": {
         "command": "npx",
-        "args": ["@juro/mcp-server"],
-        "env": {
-          "JURO_API_KEY": "your-api-key-here"
-        }
+        "args": ["@juro/mcp-server"]
       }
     }
   }
@@ -332,52 +209,28 @@ All MCP tools return structured error responses:
 
 ### Common Error Codes
 
-#### Compliance Scanning Errors
 - `INVALID_PATH` - The specified path does not exist
 - `INVALID_RULES` - One or more specified rules are not supported
-- `API_KEY_MISSING` - API key is not configured
-- `RATE_LIMIT_EXCEEDED` - Too many requests in a short time
+- `RULE_NOT_FOUND` - Rule ID not found
 - `SCAN_FAILED` - The scan operation failed
-
-#### GitHub Actions Errors (v2.0.0)
-- `GITHUB_TOKEN_MISSING` - GitHub token is not configured
-- `REPO_NOT_FOUND` - Repository not found or inaccessible
-- `WORKFLOW_CREATION_FAILED` - Failed to create GitHub workflow
-- `PR_CHECK_FAILED` - Pull request compliance check failed
-- `NOTIFICATION_FAILED` - Failed to send team notifications
-- `REPORT_GENERATION_FAILED` - Failed to generate compliance report
 
 ## Best Practices
 
-### 1. Use Specific Rules
-Instead of scanning for all rules, specify only the ones you need:
+### 1. Use Specific Regulations
+Specify only the regulations you need:
 
 ```bash
-# Good: Specific rules
-juro scan --rules gdpr,owasp
+# Good: Specific regulations
+juro scan --regulations gdpr,dora
 
-# Avoid: All rules (slower)
-juro scan --rules all
+# Avoid: Unnecessary regulations
+juro scan --regulations gdpr,dora,dpdp
 ```
 
-### 2. Batch Operations
-For multiple files, use the codebase scan instead of individual file analysis:
-
-```bash
-# Good: Scan entire directory
-juro scan --path ./src
-
-# Avoid: Multiple individual scans
-juro analyze --file ./src/auth.js
-juro analyze --file ./src/user.js
-juro analyze --file ./src/payment.js
-```
-
-### 3. Use Appropriate Output Formats
+### 2. Use Appropriate Output Formats
 Choose the right format for your use case:
 
 - `json` - For programmatic processing
-- `sarif` - For security tools integration
 - `text` - For human-readable output
 
 ## Troubleshooting
@@ -389,15 +242,13 @@ Choose the right format for your use case:
    - Check your AI assistant's MCP configuration
 
 2. **Permission Denied**
-   - Verify API key is correct
-   - Check file system permissions
+   - Verify file system permissions
 
 3. **Scan Timeout**
    - Reduce the scope of your scan
-   - Use more specific rules
+   - Use more specific regulations
 
 ### Getting Help
 
-- Check the [FAQ](/docs/support/faq) for common questions
-- Review [Error Codes](/docs/api/error-codes) for detailed error information
-- Contact support for additional assistance
+- Review error codes in the response
+- Check the documentation for configuration options

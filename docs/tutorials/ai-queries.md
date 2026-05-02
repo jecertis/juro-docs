@@ -86,8 +86,8 @@ Identify gaps in your compliance implementation:
 # GDPR gap analysis
 juro ask "What GDPR requirements am I missing in my current implementation?"
 
-# SOC2 gap analysis
-juro ask "What SOC2 controls do I need to implement for my application?"
+# DORA gap analysis
+juro ask "What DORA controls do I need to implement for my application?"
 
 # Security gap analysis
 juro ask "What security measures am I missing to protect user data?"
@@ -118,15 +118,10 @@ juro ask "Does my user registration form comply with GDPR data minimization?"
 juro ask "Are there proper consent mechanisms for data collection?"
 juro ask "Is user data being encrypted before storage?"
 
-# SOC2 compliance
-juro ask "Does my application meet SOC2 security requirements?"
+# DORA compliance
+juro ask "Does my application meet DORA resilience requirements?"
 juro ask "Are there proper access controls for sensitive data?"
 juro ask "Is audit logging implemented for data access?"
-
-# OWASP security
-juro ask "Are there any SQL injection vulnerabilities in my database queries?"
-juro ask "Is my application protected against XSS attacks?"
-juro ask "Are there any authentication bypass vulnerabilities?"
 ```
 
 ### Security Questions

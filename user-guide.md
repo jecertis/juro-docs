@@ -57,7 +57,7 @@ juro scan
 juro scan src/
 
 # Scan with specific regulations
-juro scan --regulations GDPR,SOC2
+juro scan --regulations GDPR,DORA,DPDP
 
 # Scan with custom severity threshold
 juro scan --severity-threshold HIGH
@@ -151,7 +151,7 @@ jobs:
       - name: Run Compliance Check
         uses: juro/compliance-check@v1
         with:
-          regulations: 'GDPR,SOC2'
+          regulations: 'GDPR,DORA,DPDP'
           severity-threshold: 'MEDIUM'
           fail-on-violations: true
 ```
@@ -218,7 +218,7 @@ juro report --type risk --output risk-report.pdf
 juro feedback --issue-id "GDPR-001" --rating helpful
 
 # Correct false positives
-juro feedback --issue-id "SOC2-002" --correction "This is actually compliant"
+juro feedback --issue-id "DORA-002" --correction "This is actually compliant"
 
 # View learning progress
 juro learning status
@@ -255,7 +255,7 @@ Create `juro.config.json` in your project root:
 
 ```json
 {
-  "regulations": ["GDPR", "SOC2"],
+  "regulations": ["GDPR", "DORA", "DPDP"],
   "severityThreshold": "MEDIUM",
   "includePatterns": ["**/*.js", "**/*.ts", "**/*.py"],
   "excludePatterns": ["**/node_modules/**", "**/dist/**"],
