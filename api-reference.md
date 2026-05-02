@@ -43,7 +43,7 @@ Scans a directory for compliance violations.
 ```json
 {
   "path": "/path/to/project",
-  "regulations": ["GDPR", "SOC2"],
+  "regulations": ["GDPR", "DORA", "DPDP"],
   "severityThreshold": "MEDIUM"
 }
 ```
@@ -520,7 +520,7 @@ Learns and improves from user feedback.
   "code": "RULE_NOT_FOUND",
   "details": {
     "ruleId": "INVALID-RULE",
-    "availableRules": ["GDPR-001", "SOC2-001", "OWASP-001"]
+    "availableRules": ["GDPR-001", "DORA-001", "DPDP-001"]
   }
 }
 ```
@@ -570,7 +570,7 @@ Learns and improves from user feedback.
 ### **Global Configuration**
 ```json
 {
-  "regulations": ["GDPR", "SOC2", "OWASP"],
+  "regulations": ["GDPR", "DORA", "DPDP"],
   "severityThreshold": "MEDIUM",
   "includePatterns": ["**/*.js", "**/*.ts", "**/*.py"],
   "excludePatterns": ["**/node_modules/**", "**/dist/**"],

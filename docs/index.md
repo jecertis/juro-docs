@@ -194,7 +194,7 @@ node packages/cli/dist/cli.js scan ./my-project -r DPDP --verify --verify-max 10
 <div className="success-stories">
   <div className="success-story">
     <h4>TechCorp Inc.</h4>
-    <p>"Juro helped us achieve SOC 2 compliance 3x faster than traditional methods. The AI insights were game-changing."</p>
+    <p>"Juro gave us signed, verifiable compliance artifacts for our DPDP audit. No guesswork — just evidence we can prove."</p>
     <span className="success-author">- Sarah Johnson, CTO</span>
   </div>
   <div className="success-story">

@@ -16,7 +16,7 @@ Create a `juro.config.json` file in your project root:
 
 ```json
 {
-  "regulations": ["GDPR", "SOC2"],
+  "regulations": ["GDPR", "DORA", "DPDP"],
   "excludePatterns": ["node_modules/**", "dist/**"],
   "customRules": "./custom-rules.json",
   "severity": {
@@ -31,7 +31,7 @@ Create a `juro.config.json` file in your project root:
 
 ```bash
 # Set default regulations
-export JURO_REGULATIONS="GDPR,SOC2,OWASP"
+export JURO_REGULATIONS="GDPR,DORA,DPDP"
 
 # Set scan path
 export JURO_SCAN_PATH="./src"

@@ -3,7 +3,7 @@ id: compliance-scanning
 title: Compliance Scanning
 sidebar_label: Compliance Scanning
 description: 'Comprehensive compliance scanning across multiple regulations and standards'
-keywords: [compliance scanning, regulations, GDPR, DORA, DPDP India, SOC2, OWASP, automated scanning]
+keywords: [compliance scanning, regulations, GDPR, DORA, DPDP, automated scanning]
 ---
 
 # Compliance Scanning

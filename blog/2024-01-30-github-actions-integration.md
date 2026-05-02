@@ -51,7 +51,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -107,7 +107,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format sarif --output compliance-results.sarif
+          juro scan --path ./src --rules gdpr,dora,dpdp --format sarif --output compliance-results.sarif
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -141,7 +141,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -222,7 +222,7 @@ jobs:
       - name: Run Compliance Scan
         if: steps.changes.outputs.src == 'true' || steps.changes.outputs.config == 'true'
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
 ```
@@ -256,7 +256,7 @@ jobs:
       
       - name: Run Compliance Scan for ${{ matrix.project }}
         run: |
-          juro scan --path ./${{ matrix.project }}/src --rules gdpr,soc2,owasp --format json --output ${{ matrix.project }}-results.json
+          juro scan --path ./${{ matrix.project }}/src --rules gdpr,dora,dpdp --format json --output ${{ matrix.project }}-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -292,7 +292,7 @@ jobs:
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
   
-  soc2-check:
+  dora-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -302,13 +302,13 @@ jobs:
           node-version: '18'
       - name: Install Juro CLI
         run: npm install -g @juro/cli
-      - name: Run SOC2 Scan
+      - name: Run DORA Scan
         run: |
-          juro scan --path ./src --rules soc2 --format json --output soc2-results.json
+          juro scan --path ./src --rules dora --format json --output dora-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
   
-  owasp-check:
+  dpdp-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -318,9 +318,9 @@ jobs:
           node-version: '18'
       - name: Install Juro CLI
         run: npm install -g @juro/cli
-      - name: Run OWASP Scan
+      - name: Run DPDP Scan
         run: |
-          juro scan --path ./src --rules owasp --format json --output owasp-results.json
+          juro scan --path ./src --rules dpdp --format json --output dpdp-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
 ```
@@ -402,11 +402,11 @@ jobs:
       - name: Run Environment-Specific Scan
         run: |
           if [ "${{ matrix.environment }}" = "production" ]; then
-            juro scan --path ./src --rules gdpr,soc2,owasp,hipaa --format json --output compliance-results.json
+            juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
           elif [ "${{ matrix.environment }}" = "staging" ]; then
-            juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+            juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
           else
-            juro scan --path ./src --rules gdpr,owasp --format json --output compliance-results.json
+            juro scan --path ./src --rules gdpr,dora --format json --output compliance-results.json
           fi
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
@@ -419,7 +419,7 @@ jobs:
 ```yaml
 - name: Run Compliance Scan
   run: |
-    juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json --fail-on-critical
+    juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json --fail-on-critical
   env:
     JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
 ```

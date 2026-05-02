@@ -17,14 +17,14 @@ Comprehensive examples showing how to use the Juro API and MCP tools in various 
 juro scan --path ./my-project --rules gdpr
 
 # Scan with multiple compliance standards
-juro scan --path ./my-project --rules gdpr,soc2,owasp --format json
+juro scan --path ./my-project --rules gdpr,dora,dpdp --format json
 ```
 
 ### File Analysis
 
 ```bash
 # Analyze specific file
-juro analyze --file ./src/auth.js --rules gdpr,owasp
+juro analyze --file ./src/auth.js --rules gdpr,dora
 
 # Analyze with context
 juro analyze --file ./src/user.js --rules gdpr --context "User authentication module"
@@ -56,7 +56,7 @@ async function scanProject() {
   try {
     const result = await client.scan({
       path: './src',
-      rules: ['gdpr', 'owasp'],
+      rules: ['gdpr', 'dora'],
       format: 'json'
     });
     
@@ -107,7 +107,7 @@ def scan_project():
     try:
         result = client.scan(
             path="./src",
-            rules=["gdpr", "owasp"],
+            rules=["gdpr", "dora"],
             format="json"
         )
         print("Scan results:", result)
@@ -154,7 +154,7 @@ func main() {
     // Scan codebase
     result, err := client.Scan(juro.ScanRequest{
         Path:   "./src",
-        Rules:  []string{"gdpr", "owasp"},
+        Rules:  []string{"gdpr", "dora"},
         Format: "json",
     })
     if err != nil {
@@ -198,7 +198,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format sarif --output compliance-results.sarif
+          juro scan --path ./src --rules gdpr,dora,dpdp --format sarif --output compliance-results.sarif
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -220,7 +220,7 @@ compliance_scan:
   before_script:
     - npm install -g @juro/cli
   script:
-    - juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+    - juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
   artifacts:
     reports:
       junit: compliance-results.json
@@ -242,7 +242,7 @@ pipeline {
         stage('Compliance Scan') {
             steps {
                 sh 'npm install -g @juro/cli'
-                sh 'juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json'
+                sh 'juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json'
             }
         }
         
@@ -313,7 +313,7 @@ pipeline {
         }
       ]
     },
-    "owasp": {
+    "dora": {
       "enabled": true,
       "severity": "critical",
       "excludePatterns": [
@@ -332,7 +332,7 @@ pipeline {
 # Scan multiple projects
 
 PROJECTS=("project1" "project2" "project3")
-RULES="gdpr,soc2,owasp"
+RULES="gdpr,dora,dpdp"
 
 for project in "${PROJECTS[@]}"; do
     echo "Scanning $project..."
@@ -356,7 +356,7 @@ app.post('/webhook/compliance', async (req, res) => {
     // Scan changed files
     const results = await client.scan({
       path: repository.path,
-      rules: ['gdpr', 'owasp'],
+      rules: ['gdpr', 'dora'],
       files: files
     });
     
@@ -469,7 +469,7 @@ async function scanWithCache(projectPath) {
   // Perform scan
   const result = await client.scan({
     path: projectPath,
-    rules: ['gdpr', 'soc2']
+    rules: ['gdpr', 'dora']
   });
   
   // Cache results
@@ -519,7 +519,7 @@ describe('Juro Integration', () => {
     // 1. Scan project
     const scanResult = await client.scan({
       path: './test-project',
-      rules: ['gdpr', 'owasp']
+      rules: ['gdpr', 'dora', 'dpdp']
     });
     
     // 2. Analyze specific file

@@ -38,7 +38,7 @@ const client = new MCPClient('localhost', 3000);
 // Scan directory for compliance
 const result = await client.callTool('scan_directory', {
   path: './my-project',
-  regulations: ['GDPR', 'SOC2']
+  regulations: ['GDPR', 'DORA']
 });
 
 console.log(result.violations);`}</code></pre>

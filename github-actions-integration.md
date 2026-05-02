@@ -41,7 +41,7 @@ juro mcp call add_github_workflow --repoPath ./my-project --config '{
 ```bash
 # Using MCP client
 juro mcp call create_pr_workflow --config '{
-  "regulations": ["GDPR", "DORA", "SOC2"],
+  "regulations": ["GDPR", "DORA", "DPDP"],
   "failOnViolations": true,
   "minScore": 85
 }'
