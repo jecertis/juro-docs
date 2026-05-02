@@ -6,7 +6,7 @@ sidebar_label: GDPR Compliance
 
 # GDPR Compliance
 
-Learn how to ensure your code meets GDPR (General Data Protection Regulation) requirements with Juro's comprehensive compliance scanning.
+Learn how Juro's deterministic, signed compliance scanner surfaces GDPR (General Data Protection Regulation) gaps in your codebase. Coverage is scoped to a defined GDPR rule pack — explicit, auditable, and not aspirational.
 
 ## ✅ **Current Implementation Status**
 
@@ -117,7 +117,7 @@ juro scan --path ./src --rules gdpr --format html --output gdpr-report.html
 - **Real-Time Scanning**: Violations appear instantly as you type
 - **Inline Highlighting**: Visual indicators for GDPR violations
 - **Hover Tooltips**: Detailed information and fix suggestions
-- **Compliance Scoring**: Real-time GDPR compliance score
+- **GDPR Posture Score**: Real-time 0–100 score against the loaded GDPR rule pack, with rule-pack version + scope statement always visible (see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 
 ### **GitHub Actions Integration**
 ```yaml

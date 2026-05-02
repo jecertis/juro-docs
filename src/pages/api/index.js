@@ -83,13 +83,12 @@ console.log(result.violations);`}</code></pre>
             </div>
 
             <div className="margin-vert--lg">
-              <h2>AI Agent Integration</h2>
-              <p>Tools for AI agents to run compliance scans and interpret results:</p>
+              <h2>Agent Integration</h2>
+              <p>Tools for software agents to run compliance scans and consume results. LLM-assisted triage notes are advisory metadata only — never enter the signed evidence set (per <a href="https://github.com/jecertis/juro-workspace/blob/main/AXIOMS.md">AXIOM 4</a>).</p>
               <ul>
-                <li><strong>Natural Language Queries</strong> - Ask questions about your code in plain English</li>
-                <li><strong>Intelligent Analysis</strong> - AI-powered code analysis and suggestions</li>
-                <li><strong>Auto-Discovery</strong> - Automatically detect project types and regulations</li>
-                <li><strong>Learning System</strong> - AI learns from your feedback and improves over time</li>
+                <li><strong>Auto-Discovery</strong> - Detect project types and applicable regulations from the codebase</li>
+                <li><strong>Triage Notes</strong> - LLM-generated context attached to each finding (advisory; the signed set is deterministic)</li>
+                <li><strong>Programmatic Access</strong> - MCP and HTTP APIs for agent-driven workflows</li>
               </ul>
             </div>
 

@@ -30,16 +30,6 @@ juro analyze --file ./src/auth.js --rules gdpr,owasp
 juro analyze --file ./src/user.js --rules gdpr --context "User authentication module"
 ```
 
-### Natural Language Queries
-
-```bash
-# Ask about compliance
-juro ask "Does my authentication system comply with GDPR requirements?"
-
-# Ask about specific patterns
-juro ask "Are there any SQL injection vulnerabilities in my database queries?"
-```
-
 ## Programming Language Examples
 
 ### JavaScript/Node.js

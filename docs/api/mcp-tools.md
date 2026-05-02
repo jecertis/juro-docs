@@ -88,40 +88,6 @@ Analyzes a specific file for compliance issues.
 juro analyze --file ./src/auth.js --rules gdpr,owasp
 ```
 
-### `ask_question`
-
-Ask natural language questions about your code's compliance.
-
-```json
-{
-  "name": "ask_question",
-  "description": "Ask questions about code compliance in natural language",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "question": {
-        "type": "string",
-        "description": "Natural language question about compliance"
-      },
-      "context": {
-        "type": "string",
-        "description": "Additional context or file paths to consider"
-      }
-    },
-    "required": ["question"]
-  }
-}
-```
-
-**Example Usage:**
-```bash
-# Ask about GDPR compliance
-juro ask "Does my authentication system comply with GDPR requirements?"
-
-# Ask about specific code patterns
-juro ask "Are there any SQL injection vulnerabilities in my database queries?"
-```
-
 ### GitHub Actions Tools (v2.0.0)
 
 ### `add_github_workflow`

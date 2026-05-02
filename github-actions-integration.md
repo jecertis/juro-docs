@@ -32,7 +32,7 @@ juro mcp call add_github_workflow --repoPath ./my-project --config '{
   "regulations": ["GDPR", "DORA"],
   "trigger": "push",
   "failOnCritical": true,
-  "minScore": 80
+  "minPostureScore": 80
 }'
 ```
 
@@ -43,7 +43,7 @@ juro mcp call add_github_workflow --repoPath ./my-project --config '{
 juro mcp call create_pr_workflow --config '{
   "regulations": ["GDPR", "DORA", "SOC2"],
   "failOnViolations": true,
-  "minScore": 85
+  "minPostureScore": 85
 }'
 ```
 
@@ -76,7 +76,7 @@ juro mcp call run_pr_compliance_check --prData '{
 | `regulations` | array | ["GDPR", "DORA"] | Compliance regulations to check |
 | `failOnViolations` | boolean | false | Whether to fail workflow on violations |
 | `failOnCritical` | boolean | true | Whether to fail workflow on critical violations |
-| `minScore` | number | 80 | Minimum compliance score required |
+| `minPostureScore` | number | 80 | Minimum Posture Score required (per regulation; see Posture Score contract) |
 | `customRules` | object | {} | Custom compliance rules |
 | `matrix` | object | {} | Matrix configuration for multiple environments |
 | `notifications` | object | {} | Notification configuration |
@@ -143,7 +143,7 @@ jobs:
           regulations: ["GDPR", "DORA"]
           fail-on-violations: false
           fail-on-critical: true
-          min-score: 80
+          min-posture-score: 80
       
       - name: Comment on PR
         if: github.event_name == 'pull_request' && steps.compliance.outputs.violations > 0
@@ -273,15 +273,15 @@ Configure different compliance requirements for different environments:
   },
   "environmentConfig": {
     "development": {
-      "minScore": 60,
+      "minPostureScore": 60,
       "failOnViolations": false
     },
     "staging": {
-      "minScore": 80,
+      "minPostureScore": 80,
       "failOnViolations": true
     },
     "production": {
-      "minScore": 95,
+      "minPostureScore": 95,
       "failOnViolations": true
     }
   }

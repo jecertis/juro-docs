@@ -8,7 +8,7 @@ keywords: [GitHub Actions, CI/CD, compliance automation, PR checks, workflow gen
 
 # GitHub Actions Integration
 
-Juro v2.0.0 provides comprehensive GitHub Actions integration with automated workflow generation, PR compliance checking, team notifications, and custom rule support. **18/18 BDD tests passing** with production-ready implementation.
+Juro v2.0.0 provides GitHub Actions integration with automated workflow generation, PR compliance checking, team notifications, and custom rule support. **18/18 BDD tests passing** with production-ready implementation.
 
 ## 🚀 What's New in v2.0.0
 
@@ -127,7 +127,7 @@ strategy:
 - **Violation Breakdown**: By file and severity
 - **Fix Suggestions**: Actionable recommendations
 - **Visual Indicators**: Emojis and formatting
-- **Compliance Score**: Overall project compliance
+- **Posture Score (per regulation)**: Per-regulation Posture Score with rule pack version + scope visible (see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 
 ### **PR Comment Example**
 ```markdown
@@ -258,7 +258,7 @@ strategy:
   uses: juro/compliance-action@v1
   with:
     fail-on-critical: true
-    min-score: 80
+    min-posture-score: 80
 ```
 
 ### **2. Use Matrix Strategies**

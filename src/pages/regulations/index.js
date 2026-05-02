@@ -10,8 +10,9 @@ export default function RegulationsPage() {
           <div className="col col--8 col--offset-2">
             <h1>Compliance Regulations</h1>
             <p className="lead">
-              Juro supports comprehensive compliance scanning across multiple regulations 
-              and standards to ensure your code meets industry requirements.
+              Juro supports deterministic, signed compliance scanning for the
+              regulations below. Coverage is intentionally narrow and explicit —
+              every supported rule maps to a specific Article or Section.
             </p>
             
             <div className="margin-vert--lg">

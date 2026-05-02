@@ -2,13 +2,13 @@
 id: compliance-scanning
 title: Compliance Scanning
 sidebar_label: Compliance Scanning
-description: 'Comprehensive compliance scanning across multiple regulations and standards'
-keywords: [compliance scanning, regulations, GDPR, DORA, DPDP India, SOC2, OWASP, automated scanning]
+description: 'Deterministic, signed compliance scanning for GDPR, DORA, and DPDP'
+keywords: [compliance scanning, regulations, GDPR, DORA, DPDP India, automated scanning, posture score]
 ---
 
 # Compliance Scanning
 
-Juro v2.0.0 provides comprehensive compliance scanning across multiple regulations and standards with high-throughput performance optimization and real-time IDE integration.
+Juro v2.0.0 provides deterministic, signed compliance scanning for the supported regulations (GDPR, DORA, DPDP) with high-throughput performance and real-time IDE integration. Scope is intentionally narrow — see [VISION](https://github.com/jecertis/juro-workspace/blob/main/VISION.md) and [PRINCIPLES](https://github.com/jecertis/juro-workspace/blob/main/PRINCIPLES.md).
 
 ## Current Implementation Status
 
@@ -23,7 +23,7 @@ Juro v2.0.0 provides comprehensive compliance scanning across multiple regulatio
 - **Instant Feedback**: Get compliance violations as you type
 - **Inline Highlighting**: Visual indicators for violation severity
 - **Hover Tooltips**: Rich information with fix suggestions
-- **Compliance Scoring**: Real-time compliance score updates
+- **Posture Score**: Real-time per-regulation Posture Score updates (DPDP / GDPR / DORA, scoped per surface — see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 - **Zero Configuration**: Works out of the box
 
 ### **Performance Optimization**

@@ -8,7 +8,7 @@ keywords: [architecture, MCP protocol, modern, performance optimization, microse
 
 # Architecture Overview
 
-Juro v2.0.0 is built on a modern, modern architecture designed for scalability, performance, and comprehensive compliance scanning across multiple regulations and standards.
+Juro v2.0.0 is built for deterministic, signed compliance scanning across the supported regulations (GDPR, DORA, DPDP). Scope is intentionally narrow — see [VISION](https://github.com/jecertis/juro-workspace/blob/main/VISION.md) and [PRINCIPLES](https://github.com/jecertis/juro-workspace/blob/main/PRINCIPLES.md).
 
 ## 🏗️ **System Architecture**
 
