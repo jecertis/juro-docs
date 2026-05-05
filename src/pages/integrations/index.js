@@ -94,7 +94,7 @@ jobs:
       - name: Run Juro Compliance Check
         uses: juro/compliance-action@v1
         with:
-          regulations: '["GDPR", "SOC2"]'
+          regulations: '["GDPR", "DORA", "DPDP"]'
           fail-on-violations: true`}</code></pre>
                 </div>
               </div>
