@@ -33,7 +33,7 @@ Triggered when a compliance scan completes successfully.
       "medium": 2,
       "low": 0
     },
-    "rules": ["gdpr", "soc2", "owasp"],
+    "rules": ["gdpr", "dora", "dpdp"],
     "duration": 45.2,
     "filesScanned": 150
   }

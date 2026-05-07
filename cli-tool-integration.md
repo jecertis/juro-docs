@@ -37,7 +37,7 @@ The Juro CLI Tool provides a command-line interface for compliance scanning with
 juro-cli init /path/to/project
 
 # With specific regulations
-juro-cli init /path/to/project --regulations GDPR,DORA,DPDP,SOC2
+juro-cli init /path/to/project --regulations GDPR,DORA,DPDP
 
 # With custom output format
 juro-cli init /path/to/project --format html --git-hooks
@@ -247,7 +247,7 @@ Setup package manager integration with compliance scripts.
 | Python | `requirements.txt` | GDPR, DORA, DPDP |
 | Java | `pom.xml` | GDPR, DORA, DPDP |
 | Go | `go.mod` | GDPR, DORA, DPDP |
-| Rust | `Cargo.toml` | GDPR, SOC 2 |
+| Rust | `Cargo.toml` | GDPR, DORA, DPDP |
 
 ### Package Manager Detection
 
@@ -428,7 +428,7 @@ npm run compliance:report
 juro-cli init ./my-python-project --auto-detect --git-hooks
 
 # Run compliance scan
-juro-cli scan --regulations GDPR,SOC2
+juro-cli scan --regulations GDPR,DORA,DPDP
 
 # Generate Markdown report
 juro-cli report --format markdown

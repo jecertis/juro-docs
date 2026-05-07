@@ -41,7 +41,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format sarif --output compliance-results.sarif
+          juro scan --path ./src --rules gdpr,dora,dpdp --format sarif --output compliance-results.sarif
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -93,7 +93,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -161,7 +161,7 @@ jobs:
       - name: Run Compliance Scan
         id: scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results.json --fail-on-critical
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results.json --fail-on-critical
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
       
@@ -216,7 +216,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --rules-file custom-rules.json --format sarif --output compliance-results.sarif
+          juro scan --path ./src --rules gdpr,dora,dpdp --rules-file custom-rules.json --format sarif --output compliance-results.sarif
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
 ```
@@ -251,7 +251,7 @@ jobs:
       
       - name: Run Compliance Scan
         run: |
-          juro scan --path ./src --rules gdpr,soc2,owasp --format json --output compliance-results-${{ matrix.os }}-${{ matrix.node-version }}.json
+          juro scan --path ./src --rules gdpr,dora,dpdp --format json --output compliance-results-${{ matrix.os }}-${{ matrix.node-version }}.json
         env:
           JURO_API_KEY: ${{ secrets.JURO_API_KEY }}
 ```
