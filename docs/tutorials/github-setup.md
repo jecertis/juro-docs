@@ -415,10 +415,9 @@ env:
 
 Now that you've set up GitHub integration, you can:
 
-1. **Learn about AI queries** - [AI Queries Tutorial](/docs/tutorials/ai-queries)
-2. **Create custom rules** - [Custom Rules Tutorial](/docs/tutorials/custom-rules)
-3. **Explore advanced features** - [API Examples](/docs/api/examples)
-4. **Learn about webhooks** - [Webhooks Documentation](/docs/api/webhooks)
+1. **Create custom rules** - [Custom Rules Tutorial](/docs/tutorials/custom-rules)
+2. **Explore advanced features** - [API Examples](/docs/api/examples)
+3. **Learn about webhooks** - [Webhooks Documentation](/docs/api/webhooks)
 
 ## Getting Help
 

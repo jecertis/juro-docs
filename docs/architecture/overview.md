@@ -8,7 +8,7 @@ keywords: [architecture, MCP protocol, compliance scanning, non-custodial, signe
 
 # Architecture Overview
 
-Juro is built on a non-custodial architecture designed for deterministic, signed, and verifiable compliance artifacts.
+Juro v2.0.0 is built on a non-custodial architecture for deterministic, signed, and verifiable compliance scanning across GDPR, DORA, and DPDP. Scope is intentionally narrow — see [VISION](https://github.com/jecertis/juro-workspace/blob/main/VISION.md) and [PRINCIPLES](https://github.com/jecertis/juro-workspace/blob/main/PRINCIPLES.md).
 
 ## 🏗️ **System Architecture**
 

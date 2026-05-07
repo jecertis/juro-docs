@@ -31,7 +31,6 @@ const sidebars = {
             label: 'Features',
             items: [
               'features/compliance-scanning',
-              'features/ai-analysis',
               'features/performance-optimization',
             ],
           },

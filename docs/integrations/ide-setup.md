@@ -67,7 +67,7 @@ Juro's VS Code extension provides real-time compliance scanning with inline viol
 ### **Available Commands**
 - `juro.scanWorkspace` - Scan entire workspace
 - `juro.scanFile` - Scan current file
-- `juro.showComplianceScore` - Display compliance score
+- `juro.showComplianceScore` - Display the per-regulation Posture Score (see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 - `juro.showViolations` - Show violations panel
 - `juro.fixViolation` - Apply suggested fix
 
@@ -86,7 +86,7 @@ Juro's VS Code extension provides real-time compliance scanning with inline viol
 ### **Status Bar Items**
 - **Workspace Compliance**: Overall workspace compliance status
 - **File Compliance**: Current file compliance status
-- **Overall Score**: Numeric compliance score
+- **Posture Score (DPDP)**: Numeric Posture Score for the wedge regulation, scoped per the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md). Tooltip names the rule pack and surface; cross-regulation aggregates are out of scope.
 
 ## Sidebar Views
 
@@ -96,10 +96,10 @@ Juro's VS Code extension provides real-time compliance scanning with inline viol
 - Click to navigate to violation location
 - Right-click for context menu options
 
-### **Compliance Scores**
-- Real-time compliance scoring
-- Breakdown by regulation
-- Trend analysis over time
+### **Posture Scores**
+- Real-time per-regulation Posture Score (DPDP / GDPR / DORA)
+- Each score scoped to its rule pack — version + sha visible alongside the number
+- Trend analysis over time per regulation (no cross-regulation aggregate; see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 - Performance metrics
 
 ## Real-Time Scanning
@@ -113,7 +113,7 @@ Juro's VS Code extension provides real-time compliance scanning with inline viol
 ### **Performance Optimization**
 - **File Size Limits**: Skip files larger than 1MB for performance
 - **Incremental Updates**: Only update changed components
-- **Caching**: Intelligent caching of compliance scores
+- **Caching**: Intelligent caching of Posture Score values
 - **Async Operations**: Non-blocking compliance scanning
 
 ## Troubleshooting
@@ -181,9 +181,9 @@ For comprehensive analysis, use workspace scanning:
 - Right-click in Explorer → "Scan Workspace"
 - Command Palette → "Juro: Scan Workspace"
 
-### **3. Monitor Compliance Scores**
-Keep track of compliance scores over time:
-- Check sidebar compliance scores
+### **3. Monitor Posture Scores**
+Track per-regulation Posture Scores over time:
+- Check the sidebar for per-regulation Posture Scores (DPDP / GDPR / DORA — scored independently)
 - Monitor status bar indicators
 - Review violation trends
 

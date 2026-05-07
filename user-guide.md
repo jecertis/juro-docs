@@ -87,23 +87,11 @@ juro rules details GDPR-001
 juro rules validate GDPR-001
 ```
 
-## 🤖 **AI-Powered Features**
+## **Triage and Context**
 
-### **Natural Language Queries**
-Juro understands natural language and can answer questions about your code:
+Juro's findings include LLM-assisted triage notes (advisory metadata only — never enters the signed evidence set, per [AXIOM 4](https://github.com/jecertis/juro-workspace/blob/main/AXIOMS.md)).
 
-```bash
-# Ask about compliance
-juro ask "Check my code for GDPR violations"
-juro ask "What are the security risks in my authentication system?"
-juro ask "Explain the data storage issues in my API"
-
-# Get suggestions
-juro ask "How can I fix the localStorage usage in my React app?"
-juro ask "What's the best way to handle user consent for GDPR?"
-```
-
-### **Intelligent Code Analysis**
+### **Code Analysis with Context**
 ```bash
 # Analyze code with context
 juro analyze src/auth.js --context "authentication system"

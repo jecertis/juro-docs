@@ -2,7 +2,7 @@
 
 > **Complete API documentation for Juro MCP Server**
 
-The Juro MCP Server provides both HTTP API endpoints and MCP protocol support for comprehensive compliance scanning and rule management.
+The Juro MCP Server provides both HTTP API endpoints and MCP protocol support for compliance scanning and rule management against the supported regulations (GDPR, DORA, DPDP).
 
 ## 🚀 Base URL
 

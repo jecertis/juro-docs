@@ -19,7 +19,7 @@ Juro provides 20+ MCP tools organized into four categories:
 - **Core Compliance Tools** (5 tools) - Basic scanning and rule management
 - **GitHub Actions Tools** (5 tools) - CI/CD integration
 - **CLI Tools** (5 tools) - Command-line interface
-- **AI Agent Tools** (8 tools) - AI-powered features
+- **Agent Tools** (8 tools) - LLM-assisted *triage* tools (advisory metadata only; deterministic findings remain the signed source of truth per [AXIOM 4](https://github.com/jecertis/juro-workspace/blob/main/AXIOMS.md))
 
 ## 🔍 **Core Compliance Tools**
 

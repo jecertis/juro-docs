@@ -1,13 +1,13 @@
 ---
 slug: gdpr-compliance-made-simple
-title: "GDPR Compliance Made Simple with AI"
+title: "GDPR Compliance Made Simple"
 authors: [juro-team]
-tags: [gdpr, compliance, ai, privacy]
+tags: [gdpr, compliance, privacy]
 ---
 
-# GDPR Compliance Made Simple with AI
+# GDPR Compliance Made Simple
 
-The General Data Protection Regulation (GDPR) can be overwhelming for development teams. Learn how Juro's AI-powered scanning makes GDPR compliance accessible and automated.
+The General Data Protection Regulation (GDPR) can be overwhelming for development teams. Learn how Juro's deterministic, signed scanning surfaces GDPR gaps in your codebase — every finding is mapped to a specific Article and emitted as a verifiable artefact, not a probabilistic guess.
 
 <!--truncate-->
 
@@ -123,21 +123,6 @@ juro scan --path ./my-project --rules gdpr
 
 # Get detailed GDPR report
 juro scan --path ./my-project --rules gdpr --format json --output gdpr-report.json
-```
-
-### Natural Language Queries
-
-Ask questions about your code's GDPR compliance:
-
-```bash
-# Ask about data handling
-juro ask "Does my user registration form comply with GDPR data minimization requirements?"
-
-# Ask about consent mechanisms
-juro ask "Are there proper consent mechanisms for data collection in my analytics code?"
-
-# Ask about data subject rights
-juro ask "Is there a way for users to access and delete their personal data?"
 ```
 
 ### Real-Time Feedback
@@ -329,12 +314,7 @@ class GDPRCompliantLogger {
    juro scan --path ./my-project --rules gdpr
    ```
 
-3. **Ask Compliance Questions**:
-   ```bash
-   juro ask "Does my user registration comply with GDPR?"
-   ```
-
-4. **Set Up Continuous Monitoring**:
+3. **Set Up Continuous Monitoring**:
    ```bash
    juro scan --path ./my-project --rules gdpr --watch
    ```
@@ -348,4 +328,4 @@ class GDPRCompliantLogger {
 
 ---
 
-*Ready to make GDPR compliance simple? [Try Juro today](https://juro.dev/signup) and see how AI can transform your compliance workflow.*
+*Ready to make GDPR compliance simple? [Try Juro today](https://juro.dev/signup) and get verifiable, auditor-ready findings for every line of code.*

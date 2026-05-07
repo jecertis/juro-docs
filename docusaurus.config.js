@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Juro Compliance Platform',
-  tagline: 'Automated compliance scanning and AI-powered code analysis for modern development teams',
+  tagline: 'Compliance you can prove — deterministic, signed scanning for GDPR, DORA, and DPDP',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

@@ -268,10 +268,9 @@ node packages/cli/dist/cli.js scan --url https://example.com -r DPDP -o html -f 
 
 Now that you understand basic scanning, you can:
 
-1. **Learn about AI queries** - [AI Queries Tutorial](/docs/tutorials/ai-queries)
-2. **Create custom rules** - [Custom Rules Tutorial](/docs/tutorials/custom-rules)
-3. **Set up GitHub Actions** - [GitHub Setup Tutorial](/docs/tutorials/github-setup)
-4. **Explore advanced features** - [API Examples](/docs/api/examples)
+1. **Create custom rules** - [Custom Rules Tutorial](/docs/tutorials/custom-rules)
+2. **Set up GitHub Actions** - [GitHub Setup Tutorial](/docs/tutorials/github-setup)
+3. **Explore advanced features** - [API Examples](/docs/api/examples)
 
 ## Getting Help
 

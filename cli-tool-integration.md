@@ -53,7 +53,7 @@ juro-cli scan
 juro-cli scan src/ --regulations GDPR
 
 # Scan with custom thresholds
-juro-cli scan --min-score 90 --fail-on-critical
+juro-cli scan --min-posture-score 90 --fail-on-critical
 ```
 
 ### 3. Generate Reports
@@ -83,7 +83,7 @@ juro-cli report --format markdown
   "compliance": {
     "regulations": ["GDPR", "DORA"],
     "thresholds": {
-      "minScore": 80,
+      "minPostureScore": 80,
       "failOnCritical": true,
       "failOnHigh": false
     },
@@ -150,7 +150,7 @@ Run compliance scan via CLI.
 - `regulations` (array, optional): List of compliance regulations to check
 - `format` (string, optional): Output format for the scan
 - `failOnCritical` (boolean, optional): Fail the scan if critical violations are found
-- `minScore` (number, optional): Minimum compliance score required
+- `minPostureScore` (number, optional): Minimum Posture Score required (per regulation; see Posture Score contract)
 
 **Example:**
 ```json
@@ -161,7 +161,7 @@ Run compliance scan via CLI.
     "regulations": ["GDPR"],
     "format": "json",
     "failOnCritical": true,
-    "minScore": 80
+    "minPostureScore": 80
   }
 }
 ```
@@ -290,7 +290,7 @@ Runs full compliance check before push.
 echo "🔍 Running full compliance check before push..."
 
 # Run full compliance scan
-juro-cli scan --regulations GDPR,DORA,DPDP --fail-on-critical --min-score 80
+juro-cli scan --regulations GDPR,DORA,DPDP --fail-on-critical --min-posture-score 80
 
 if [ $? -ne 0 ]; then
     echo "❌ Compliance check failed. Please fix violations before pushing."

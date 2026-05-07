@@ -426,9 +426,8 @@ juro scan --path ./my-project --rules-file juro.rules.json --debug
 Now that you understand custom rules, you can:
 
 1. **Set up GitHub Actions** - [GitHub Setup Tutorial](/docs/tutorials/github-setup)
-2. **Learn about AI queries** - [AI Queries Tutorial](/docs/tutorials/ai-queries)
-3. **Explore advanced features** - [API Examples](/docs/api/examples)
-4. **Learn about webhooks** - [Webhooks Documentation](/docs/api/webhooks)
+2. **Explore advanced features** - [API Examples](/docs/api/examples)
+3. **Learn about webhooks** - [Webhooks Documentation](/docs/api/webhooks)
 
 ## Getting Help
 

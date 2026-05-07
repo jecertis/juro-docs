@@ -8,7 +8,7 @@ keywords: [DORA, financial compliance, operational resilience, security controls
 
 # DORA Compliance
 
-Learn how to ensure your code meets DORA (Digital Operational Resilience Act) requirements with Juro's comprehensive compliance scanning.
+Learn how Juro's deterministic, signed compliance scanner surfaces DORA (Digital Operational Resilience Act) gaps in your codebase. Coverage is scoped to a defined DORA rule pack — explicit, auditable, and not aspirational.
 
 ## ✅ **Current Implementation Status**
 
@@ -98,7 +98,7 @@ juro scan --path ./src --rules dora --format html --output dora-report.html
 - **Real-Time Scanning**: Violations appear instantly as you type
 - **Inline Highlighting**: Visual indicators for DORA violations
 - **Hover Tooltips**: Detailed information and fix suggestions
-- **Compliance Scoring**: Real-time DORA compliance score
+- **DORA Posture Score**: Real-time 0–100 score against the loaded DORA rule pack, with rule-pack version + scope statement always visible (see the [Posture Score contract](https://github.com/jecertis/juro-platform/blob/main/contracts/posture-score.md))
 
 ### **GitHub Actions Integration**
 ```yaml

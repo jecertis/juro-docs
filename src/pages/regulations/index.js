@@ -10,8 +10,9 @@ export default function RegulationsPage() {
           <div className="col col--8 col--offset-2">
             <h1>Compliance Regulations</h1>
             <p className="lead">
-              Juro supports comprehensive compliance scanning across multiple regulations 
-              and standards to ensure your code meets industry requirements.
+              Juro supports deterministic, signed compliance scanning for the
+              regulations below. Coverage is intentionally narrow and explicit —
+              every supported rule maps to a specific Article or Section.
             </p>
             
             <div className="margin-vert--lg">
@@ -84,28 +85,8 @@ export default function RegulationsPage() {
             </div>
 
             <div className="margin-vert--lg">
-              <h2>Additional Standards</h2>
+              <h2>Supported Regulations</h2>
               <div className="row">
-                <div className="col col--4">
-                  <div className="card">
-                    <div className="card__header">
-                      <h4>WCAG</h4>
-                    </div>
-                    <div className="card__body">
-                      <p>Web Content Accessibility Guidelines for inclusive design.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col col--4">
-                  <div className="card">
-                    <div className="card__header">
-                      <h4>CSP</h4>
-                    </div>
-                    <div className="card__body">
-                      <p>Content Security Policy implementation and validation.</p>
-                    </div>
-                  </div>
-                </div>
                 <div className="col col--4">
                   <div className="card">
                     <div className="card__header">
@@ -132,12 +113,11 @@ export default function RegulationsPage() {
                   </ul>
                 </div>
                 <div className="col col--6">
-                  <h4>Intelligent Analysis</h4>
+                  <h4>Deterministic Results</h4>
                   <ul>
-                    <li>Context-aware scanning</li>
-                    <li>False positive reduction</li>
-                    <li>Priority scoring</li>
-                    <li>Remediation suggestions</li>
+                    <li>Reproducible findings</li>
+                    <li>Regulatory citations</li>
+                    <li>Signed evidence artifacts</li>
                   </ul>
                 </div>
               </div>
