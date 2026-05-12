@@ -155,7 +155,7 @@ Juro MCP Server delivers measurable business value by automating compliance proc
 ### **Enterprise (Custom)**
 - **Cost**: Custom pricing
 - **Features**: Full customization, dedicated support, SLA guarantees
-- **Value**: Enterprise-grade compliance platform
+- **Value**: Non-custodial compliance scanning with signed, verifiable evidence
 - **Best For**: Large organizations, regulated industries
 
 ## 📊 **ROI Calculator Tool**

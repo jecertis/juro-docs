@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Enterprise-grade compliance scanning solution that integrates seamlessly with AI tools. Automate GDPR, DORA, and regulatory compliance with real-time scanning.">
+      description="Non-custodial compliance scanning for GDPR, DORA, and DPDP. Signed, deterministic, independently verifiable findings — no data leaves your perimeter.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
