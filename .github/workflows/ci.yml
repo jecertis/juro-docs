@@ -2,8 +2,22 @@ name: CI
 
 on:
   pull_request:
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'blog/**'
+      - 'package.json'
+      - 'tsconfig.json'
+      - '.github/workflows/ci.yml'
   push:
     branches: [main]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'blog/**'
+      - 'package.json'
+      - 'tsconfig.json'
+      - '.github/workflows/ci.yml'
 
 jobs:
   build:
