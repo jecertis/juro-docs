@@ -3,6 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'blog/**'
+      - 'package.json'
+      - 'npm-shrinkwrap.json'
 
 permissions:
   contents: read
