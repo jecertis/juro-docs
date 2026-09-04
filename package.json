@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/core": "^3.10.2",
     "@docusaurus/plugin-google-analytics": "^3.5.2",
     "@docusaurus/plugin-google-gtag": "^3.5.2",
     "@docusaurus/plugin-sitemap": "^3.5.2",
