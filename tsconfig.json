@@ -1,8 +1,7 @@
 {
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
+    "baseUrl": null,
     "paths": {
       "@site/*": ["./src/*"],
       "@docusaurus/*": ["./node_modules/@docusaurus/core/lib/client/exports/*"],
